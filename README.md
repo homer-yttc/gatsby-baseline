@@ -11,6 +11,8 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 ## Features
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/homer-yttc/gatsby-baseline.svg)](https://greenkeeper.io/)
+
 *UI*
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
 - [gatsby-delayed-link](https://github.com/escaladesports/gatsby-delayed-link) to optionally delay Gatsby `<Link>` for interactions, such as analytics firing 
