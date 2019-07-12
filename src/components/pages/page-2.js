@@ -1,16 +1,13 @@
-import React from 'react';
-import { Link } from 'gatsby';
-
-import Layout from '@layout/layout/layout';
-import SEO from '@meta/seo/seo';
+import React from 'react'
+import Layout from '@layout/layout/layout'
+import SEO from '@meta/seo/seo'
+import KitchenSink from '../samples/kitchen-sink/kitchen-sink'
 
 const SecondPage = () => (
   <Layout>
     <SEO title="Page two"/>
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <KitchenSink/>
   </Layout>
-);
+)
 
-export default SecondPage;
+export default SecondPage

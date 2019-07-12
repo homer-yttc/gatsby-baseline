@@ -1,4 +1,4 @@
-const { manifest } = require("../../site-settings")
+const { manifest } = require(`../../site-settings`)
 
 module.exports = [
   `gatsby-plugin-react-helmet`,
@@ -8,20 +8,20 @@ module.exports = [
   },
   `gatsby-plugin-sitemap`,
   {
-    resolve: "gatsby-plugin-robots-txt",
+    resolve: `gatsby-plugin-robots-txt`,
     options: {
       resolveEnv: () => process.env.NETLIFY_ENV,
       env: {
         production: {
-          policy: [{ userAgent: "*" }],
+          policy: [{ userAgent: `*` }],
         },
         "branch-deploy": {
-          policy: [{ userAgent: "*", disallow: ["/"] }],
+          policy: [{ userAgent: `*`, disallow: [`/`] }],
           sitemap: null,
           host: null,
         },
         "deploy-preview": {
-          policy: [{ userAgent: "*", disallow: ["/"] }],
+          policy: [{ userAgent: `*`, disallow: [`/`] }],
           sitemap: null,
           host: null,
         },

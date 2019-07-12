@@ -1,1 +1,2 @@
-tests/performance/**/*.js
+tests/performance/*
+node_modules

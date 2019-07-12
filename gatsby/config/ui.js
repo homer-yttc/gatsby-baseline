@@ -1,4 +1,4 @@
-const { srcPaths } = require("../../site-settings")
+const { srcPaths } = require(`../../site-settings`)
 
 module.exports = [
   `gatsby-plugin-fastclick`,

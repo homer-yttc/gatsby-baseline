@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   'parser': 'babel-eslint',
@@ -17,6 +17,17 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'import/no-unresolved': 0,
     'linebreak-style': 0,
+    'operator-linebreak': [2, 'after'],
+    'semi': ['error', 'never'],
+    'react/jsx-wrap-multilines': ['error', {
+      'declaration': 'parens',
+      'assignment': 'parens',
+      'return': 'ignore',
+      'arrow': 'parens',
+      'condition': 'ignore',
+      'logical': 'ignore',
+      'prop': 'ignore',
+    }],
     'quotes': ['error', 'backtick'],
     'graphql/template-strings': [
       'error',
@@ -27,4 +38,4 @@ module.exports = {
       },
     ],
   },
-};
+}
