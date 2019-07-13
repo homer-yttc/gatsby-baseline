@@ -1,7 +1,7 @@
 import React from 'react'
-import SEO from '../meta/SEO/SEO'
-import Layout from '../layout/Layout/Layout'
-import KitchenSink from '../samples/KitchenSink/KitchenSink'
+import { SEO } from '../meta'
+import { Layout } from '../layout'
+import { KitchenSink } from '../samples'
 
 const IndexPage = () => (
   <Layout>

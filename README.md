@@ -56,9 +56,38 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 - [gatsby-plugin-recaptcha](https://github.com/escaladesports/gatsby-plugin-recaptcha) & [react-recaptcha](https://github.com/appleboy/react-recaptcha) for easy use of reCaptcha on site
 - [gatsby-plugin-csp](https://github.com/bejamas/gatsby-plugin-csp) easy Content Security Policy control to aid in preventing XSS or injection attacks
 
-## ⚰️ Failures
-[gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import), because `import x from '../../../y` paths are a bulls8it standard to live by :P
-> The concept of moving away from awkwardly linked files is desirable, as it can be hard to move files around later in refactors. However, IDE support has no concept of where you're referencing these methods and components from sadly. As such, this breaks the ability to jump to definitions which is a detriment to workflow. So as practical as it is to want a clean manageable way to associate files, it just didn't pan out in actual usage. 
+## ⚰️ Failures and Lessons
+### [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import)
+> Ideal: Because `import x from '../../../y` paths are a bulls8it standard to live by :P
+
+**The Issue:**<br/>The concept of moving away from awkwardly linked files is desirable, as it can be hard to move files around later in refactors. However, IDE support has no concept of where you're referencing these methods and components from sadly. As such, this breaks the ability to jump to definitions which is a detriment to workflow. So as practical as it is to want a clean manageable way to associate files, it just didn't pan out in actual usage. 
+
+**Resolution:**<br/>While there is a bit of manual effort, a clean viable alternate was found. With components grouped into logicial concerns, i.e `layout`, `media`, `meta`, and the desire to namespace these effectively, it gets verbose targeting `../layout/Layout/Layout` named components.
+
+While module imports don't allow the right flexibility, because Gatsby is based in webpack, we're not limited and can set up a given file to use node style importing with `require` statements.
+
+**Implementation:**<br/>As such, it allows us to create index.js files per component concerns. So for the `layout` component group, we can define:
+
+```js
+// components/layout/index.js
+/* eslint-disable quotes */
+const Layout = require('./Layout/Layout')
+const Header = require('./Header/Header')
+
+module.exports = {
+  Layout,
+  Header
+}
+```
+
+Thus, from any components on site, say `pages`, we can easily target these in a clean way without breaking IDE referencing:
+
+```js
+// components/pages/index.js
+import { Layout } from '../layout' // Assumes the index.js, and pulls the correct component.
+```
+
+In the long run, this will help address both concerns on refactoring and inherent IDE support with clean simple pathing.
 
 ## ☮️ Inspiration taken from:
 [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)<br/>

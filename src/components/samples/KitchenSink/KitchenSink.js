@@ -20,7 +20,7 @@ const KitchenSink = ({ display }) => {
           marginBottom: `1.45rem`,
         }}
       >
-        <Image/>
+        <Image />
       </div>
       <label htmlFor="abc">
         <span>Abc</span>
