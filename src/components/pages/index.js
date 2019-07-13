@@ -5,8 +5,9 @@ import KitchenSink from '../samples/kitchen-sink/kitchen-sink'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home"/>
-    <KitchenSink/>
+    <SEO title="Home" />
+    <h1>Home</h1>
+    <KitchenSink />
   </Layout>
 )
 

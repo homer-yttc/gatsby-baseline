@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title}/>
+      <Header siteTitle={data.site.siteMetadata.title} />
       <div className="main-wrapper">
         <main>{children}</main>
         <footer>

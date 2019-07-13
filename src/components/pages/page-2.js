@@ -5,8 +5,9 @@ import KitchenSink from '../samples/kitchen-sink/kitchen-sink'
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two"/>
-    <KitchenSink/>
+    <SEO title="Page two" />
+    <h1>Page 2</h1>
+    <KitchenSink />
   </Layout>
 )
 

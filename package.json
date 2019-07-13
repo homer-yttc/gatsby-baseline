@@ -9,7 +9,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint": "eslint . --ext .js,.jsx",
     "lint:fix": "eslint . --ext .js,.jsx --fix",
-    "format-n-lint": "npm run format && npm run lint:fix",
+    "format-n-lint": "npm run lint:fix && npm run format && npm run lint",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
@@ -34,6 +34,7 @@
     ]
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "@svgr/webpack": "^4.3.1",
     "gatsby": "^2.13.9",
     "gatsby-image": "^2.2.4",

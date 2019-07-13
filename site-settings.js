@@ -11,6 +11,7 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === `production`
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
+let libPath = `${srcPath}/lib`
 module.exports = {
   manifest: {
     name: `gatsby-starter-default`,
@@ -32,6 +33,8 @@ module.exports = {
   srcPaths: {
     src: srcPath,
     styles: `${srcPath}/styles`,
+    lib: libPath,
+    '@hooks': `${libPath}/hooks`,
     "@layout": `${compPath}/layout`,
     "@pages": `${compPath}/pages`,
     "@meta": `${compPath}/meta`,

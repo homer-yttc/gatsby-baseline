@@ -10,6 +10,10 @@ module.exports = {
   plugins: [
     'graphql',
   ],
+  'env': {
+    'browser': true,
+    'node': true,
+  },
   'rules': {
     'strict': 0,
     'react/jsx-filename-extension': 0,
@@ -28,7 +32,17 @@ module.exports = {
       'logical': 'ignore',
       'prop': 'ignore',
     }],
-    'quotes': ['error', 'backtick'],
+    'arrow-parens': ['error','always'],
+    'comma-dangle': ['error', {
+      'arrays': 'only-multiline',
+      'objects': 'only-multiline',
+      'imports': 'never',
+      'exports': 'only-multiline',
+      'functions': 'never',
+    }],
+    'quotes': ['warn', 'backtick'],
+    'implicit-arrow-linebreak': 0,
+    'object-curly-newline': ['error', { 'multiline': true, "consistent": true }],
     'graphql/template-strings': [
       'error',
       {
