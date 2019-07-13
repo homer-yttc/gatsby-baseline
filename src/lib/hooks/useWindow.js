@@ -1,8 +1,15 @@
-import { useState } from 'react'
-import { isUndefined } from 'lodash'
+import { useState, useEffect } from 'react'
 
 const useWindow = () => {
-  const [win] = useState(!isUndefined(window) ? window : null)
+  const [win, setWin] = useState()
+
+  useEffect(() => {
+    try {
+      setWin(window)
+    } catch (e) {
+      // Ignore.
+    }
+  }, [])
 
   return win
 }
