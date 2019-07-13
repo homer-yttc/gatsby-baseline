@@ -60,7 +60,7 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import), because `import x from '../../../y` paths are a bulls8it standard to live by :P
 > The concept of moving away from awkwardly linked files is desirable, as it can be hard to move files around later in refactors. However, IDE support has no concept of where you're referencing these methods and components from sadly. As such, this breaks the ability to jump to definitions which is a detriment to workflow. So as practical as it is to want a clean manageable way to associate files, it just didn't pan out in actual usage. 
 
-### Inspiration taken from:
+## ☮️ Inspiration taken from:
 [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)<br/>
 [gatsby-advanced-starter](https://github.com/Vagr9K/gatsby-advanced-starter)<br/>
 [gatsby-universal](https://github.com/fabe/gatsby-universal)<br/>
