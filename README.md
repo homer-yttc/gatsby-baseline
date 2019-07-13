@@ -56,8 +56,8 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 - [gatsby-plugin-recaptcha](https://github.com/escaladesports/gatsby-plugin-recaptcha) & [react-recaptcha](https://github.com/appleboy/react-recaptcha) for easy use of reCaptcha on site
 - [gatsby-plugin-csp](https://github.com/bejamas/gatsby-plugin-csp) easy Content Security Policy control to aid in preventing XSS or injection attacks
 
-## Failures
-⚰️ [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import), because `import x from '../../../y` paths are a bulls8it standard to live by :P
+## ⚰️ Failures
+[gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import), because `import x from '../../../y` paths are a bulls8it standard to live by :P
 > The concept of moving away from awkwardly linked files is desirable, as it can be hard to move files around later in refactors. However, IDE support has no concept of where you're referencing these methods and components from sadly. As such, this breaks the ability to jump to definitions which is a detriment to workflow. So as practical as it is to want a clean manageable way to associate files, it just didn't pan out in actual usage. 
 
 ### Inspiration taken from:
