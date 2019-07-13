@@ -21,7 +21,8 @@
     "cy:record": "cypress run --record --key cd256083-c513-4506-89f7-4b74ca5cc79a",
     "test:e2e:dev": "cross-env CYPRESS_SUPPORT=y start-server-and-test dev http://localhost:8000 cy:open",
     "test:e2e:run": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run",
-    "test:e2e:ci": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run:ci"
+    "test:e2e:ci": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run:ci",
+    "deploy:github": "npm run build && node ./scripts/deploy-github"
   },
   "engines": {
     "node": ">=10.13.0"
@@ -90,6 +91,7 @@
     "gatsby-plugin-eslint": "^2.0.5",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
+    "gh-pages": "^2.0.1",
     "lighthouse": "^5.1.0",
     "prettier": "^1.18.2",
     "start-server-and-test": "^1.9.1"
@@ -100,9 +102,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/homer-yttc/gatsby-baseline"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/homer-yttc/gatsby-baseline/issues"
   }
 }
