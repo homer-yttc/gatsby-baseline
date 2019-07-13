@@ -11,7 +11,7 @@ module.exports = [
     resolve: `gatsby-plugin-csp`,
     options: {
       disableOnDev: true,
-      // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
+      // Changes Header to Content-Security-Policy-Report-Only for csp testing purposes
       reportOnly: false,
       mergeScriptHashes: true, // you can disable scripts sha256 hashes
       mergeStyleHashes: true, // you can disable styles sha256 hashes

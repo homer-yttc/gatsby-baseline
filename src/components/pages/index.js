@@ -1,13 +1,13 @@
 import React from 'react'
-import Layout from '@layout/layout/layout'
-import SEO from '@meta/seo/seo'
-import KitchenSink from '../samples/kitchen-sink/kitchen-sink'
+import SEO from '../meta/SEO/SEO'
+import Layout from '../layout/Layout/Layout'
+import KitchenSink from '../samples/KitchenSink/KitchenSink'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home"/>
     <h1>Home</h1>
-    <KitchenSink />
+    <KitchenSink/>
   </Layout>
 )
 

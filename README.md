@@ -47,7 +47,6 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 - 😎 [Prettier](https://prettier.io/) for code style
 - [gatsby-plugin-eslint](https://github.com/mongkuen/gatsby-plugin-eslint) with [preset config](./.eslintrc.js) for fine tune control. Out of the box extends from: `airbnb`, `eslint:recommended`, `plugin:react/recommended`
 - [gatsby-plugin-extract-schema](https://github.com/NickyMeuleman/gatsby-plugin-extract-schema) automatically extract Gatsby's graphql schemas, and process them against the eslint'ing, to ensure devs are not going out of bounds
-- [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import), because `import x from '../../../y` paths are a bulls8it standard to live by :P
 - [gatsby-plugin-page-creator](https://www.gatsbyjs.org/packages/gatsby-plugin-page-creator/) _Gatsby's official_ helper plugin, for moving `pages` to a more meaningful place 
 - [gatsby-plugin-catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/) _Gatsby's official_ helper plugin, for detecting existing Gatsby routes found in `<a>` tags and converting them to `<Link>`s automatically
 - 🔎 [gatsby-plugin-webpack-bundle-analyzer](https://github.com/escaladesports/gatsby-plugin-webpack-bundle-analyzer) which is built on top of [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to keep an eye on your bundle sizes
@@ -56,6 +55,10 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 *Security*
 - [gatsby-plugin-recaptcha](https://github.com/escaladesports/gatsby-plugin-recaptcha) & [react-recaptcha](https://github.com/appleboy/react-recaptcha) for easy use of reCaptcha on site
 - [gatsby-plugin-csp](https://github.com/bejamas/gatsby-plugin-csp) easy Content Security Policy control to aid in preventing XSS or injection attacks
+
+## Failures
+⚰️ [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import), because `import x from '../../../y` paths are a bulls8it standard to live by :P
+> The concept of moving away from awkwardly linked files is desirable, as it can be hard to move files around later in refactors. However, IDE support has no concepts of where you're referencing these methods and components from sadly, and as such breaks the ability to jump to definition. As such, as practical as it is to want a clean manageable way to associate files, it didn't pan out in actual use. 
 
 ### Inspiration taken from:
 [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)<br/>

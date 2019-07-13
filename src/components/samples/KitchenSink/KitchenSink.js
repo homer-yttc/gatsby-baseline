@@ -1,8 +1,8 @@
 import React from 'react'
 import * as PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import Image from '@media/image/image'
-import TransitionLinks from '../transition-links/transition-links'
+import TransitionLinks from '../TransitionLinks/TransitionLinks'
+import Image from '../../media/Image/Image'
 
 const KitchenSink = ({ display }) => {
   if (display) {
@@ -20,7 +20,7 @@ const KitchenSink = ({ display }) => {
           marginBottom: `1.45rem`,
         }}
       >
-        <Image />
+        <Image/>
       </div>
       <label htmlFor="abc">
         <span>Abc</span>

@@ -89,7 +89,6 @@
     "eslint-plugin-react": "^7.14.2",
     "gatsby-cypress": "^0.2.1",
     "gatsby-plugin-eslint": "^2.0.5",
-    "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gh-pages": "^2.0.1",
     "lighthouse": "^5.1.0",

@@ -1,7 +1,6 @@
 import React from 'react'
-
-import Layout from '@layout/layout/layout'
-import SEO from '@meta/seo/seo'
+import SEO from '../meta/SEO/SEO'
+import Layout from '../layout/Layout/Layout'
 
 const NotFoundPage = () => (
   <Layout>

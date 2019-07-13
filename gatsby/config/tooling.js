@@ -1,12 +1,7 @@
-const { srcPaths } = require(`../../site-settings`)
 
 module.exports = [
   `gatsby-plugin-eslint`,
   `gatsby-plugin-catch-links`,
-  {
-    resolve: `gatsby-plugin-root-import`,
-    options: srcPaths,
-  },
   {
     resolve: `gatsby-plugin-webpack-bundle-analyzer`,
     options: {
@@ -23,7 +18,7 @@ module.exports = [
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `images`,
-      path: `${process.cwd()}/src/images`,
+      path: `${process.cwd()}/src/assets/images`,
     },
   },
   {

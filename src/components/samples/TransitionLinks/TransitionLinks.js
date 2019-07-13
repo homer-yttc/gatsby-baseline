@@ -1,43 +1,11 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { isUndefined } from 'lodash'
-import { TimelineMax, Power1 } from 'gsap'
 // import * as PropTypes from 'prop-types'
 import TransitionLink, { TransitionPortal } from 'gatsby-plugin-transition-link'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Location } from '@reach/router'
-import useWindow from '@hooks/useWindow'
-
-const verticalAnimation = (transitionCover, layoutContents, { length }, direction) => {
-  const directionTo = direction === `up` ? `-100%` : `100%`
-  const directionFrom = direction === `up` ? `100%` : `-100%`
-
-  // convert ms to s for gsap
-  const seconds = length
-
-  return new TimelineMax()
-    .set(transitionCover, { y: directionFrom })
-    .to(transitionCover, seconds / 2, {
-      y: `0%`,
-      ease: Power1.easeInOut,
-    })
-    .set(layoutContents, { opacity: 0 })
-    .to(transitionCover, seconds / 2, {
-      y: directionTo,
-      ease: Power1.easeIn,
-    })
-}
-
-const test = (entry, node) =>
-  // eslint-disable-next-line implicit-arrow-linebreak
-  new TimelineMax().staggerFrom(
-    node.querySelectorAll(`h2, p, a, pre`),
-    1,
-    {
-      opacity: 0,
-      y: `+=50`,
-    },
-    0.1
-  )
+import useWindow from '../../../lib/hooks/useWindow'
+import { test, verticalAnimation } from './animations'
 
 const TransitionLinks = () => {
   const window = useWindow()
@@ -52,7 +20,7 @@ const TransitionLinks = () => {
     targetUrl = window.location.pathname === `/` ? `/page-2` : `/`
   }
   useEffect(() => {
-    setCurrentPath(window.location.pathname)
+    !!window && setCurrentPath(window.location.pathname)
   }, [window])
 
   return (

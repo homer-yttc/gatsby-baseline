@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '@layout/layout/layout'
-import SEO from '@meta/seo/seo'
-import KitchenSink from '../samples/kitchen-sink/kitchen-sink'
+import SEO from '../meta/SEO/SEO'
+import Layout from '../layout/Layout/Layout'
+import KitchenSink from '../samples/KitchenSink/KitchenSink'
 
 const SecondPage = () => (
   <Layout>

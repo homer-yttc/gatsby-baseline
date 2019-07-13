@@ -20,6 +20,7 @@ module.exports = {
     'react/jsx-tag-spacing': 0,
     'react/jsx-one-expression-per-line': 0,
     'import/no-unresolved': 0,
+    'no-unused-expressions': 0,
     'linebreak-style': 0,
     'operator-linebreak': [2, 'after'],
     'semi': ['error', 'never'],
@@ -32,7 +33,7 @@ module.exports = {
       'logical': 'ignore',
       'prop': 'ignore',
     }],
-    'arrow-parens': ['error','always'],
+    'arrow-parens': ['error', 'always'],
     'comma-dangle': ['error', {
       'arrays': 'only-multiline',
       'objects': 'only-multiline',
@@ -42,7 +43,7 @@ module.exports = {
     }],
     'quotes': ['warn', 'backtick'],
     'implicit-arrow-linebreak': 0,
-    'object-curly-newline': ['error', { 'multiline': true, "consistent": true }],
+    'object-curly-newline': ['error', { 'multiline': true, 'consistent': true }],
     'graphql/template-strings': [
       'error',
       {
