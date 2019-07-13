@@ -6,7 +6,7 @@ const { repository: { url } } = require('../package')
 ghpages.publish(
   'public',
   {
-    branch: 'master',
+    branch: 'gh-pages',
     repo: `${url}.git`,
   },
   () => {
