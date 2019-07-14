@@ -1,8 +1,8 @@
 import React from 'react'
 import * as PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import TransitionLinks from '../TransitionLinks/TransitionLinks'
-import Image from '../../media/Image/Image'
+import { Image } from '../../media'
+import { TransitionLinks } from '../index'
 
 const KitchenSink = ({ display }) => {
   if (display) {
@@ -11,7 +11,7 @@ const KitchenSink = ({ display }) => {
 
   return (
     <div>
-      <TransitionLinks />
+      <TransitionLinks/>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <div
@@ -20,11 +20,11 @@ const KitchenSink = ({ display }) => {
           marginBottom: `1.45rem`,
         }}
       >
-        <Image />
+        <Image/>
       </div>
       <label htmlFor="abc">
         <span>Abc</span>
-        <input id="abc" type="text" name="abc" />
+        <input id="abc" type="text" name="abc"/>
       </label>
       <Link to="/page-2/">Go to page 2</Link>
     </div>
