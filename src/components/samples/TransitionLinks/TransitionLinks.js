@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { isUndefined } from 'lodash'
+import React, { useCallback, useLayoutEffect, useState } from 'react'
+import { has, isObject, isUndefined } from 'lodash'
 // import * as PropTypes from 'prop-types'
 import TransitionLink, { TransitionPortal } from 'gatsby-plugin-transition-link'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
@@ -8,7 +8,8 @@ import useWindow from '../../../lib/hooks/useWindow'
 import { test, verticalAnimation } from './animations'
 
 const TransitionLinks = () => {
-  const window = useWindow()
+  const win = useWindow()
+
   const [currentPath, setCurrentPath] = useState()
   const [layoutContents, setLayoutContents] = useState()
   const [transitionCover, setTransitionCover] = useState()
@@ -16,12 +17,15 @@ const TransitionLinks = () => {
   const getTransitionCover = useCallback((n) => setTransitionCover(n), [])
   let targetUrl = `/`
 
-  if (!isUndefined(window)) {
-    targetUrl = window.location.pathname === `/` ? `/page-2` : `/`
-  }
-  useEffect(() => {
-    !!window && setCurrentPath(window.location.pathname)
-  }, [window])
+  useLayoutEffect(() => {
+    if (!isUndefined(win)) {
+      targetUrl = win.location.pathname === `/` ? `/page-2` : `/`
+    }
+
+    if (isObject(win) && has(win, `location.pathname`)) {
+      setCurrentPath(win.location.pathname)
+    }
+  }, [win])
 
   return (
     <Location>
@@ -31,15 +35,15 @@ const TransitionLinks = () => {
             <div>
               <h2>Transition Links</h2>
               {currentPath && <span>Path: {location.pathname}</span>}
-              <br />
+              <br/>
               <AniLink cover to={targetUrl} direction="right">
                 Go to a page, with a cover right
               </AniLink>
-              <br />
+              <br/>
               <AniLink paintDrip to={targetUrl} hex="#4b2571">
                 Go to a page, with a paint drip
               </AniLink>
-              <br />
+              <br/>
               <TransitionLink
                 to={targetUrl}
                 exit={{
@@ -60,7 +64,7 @@ const TransitionLinks = () => {
                 {` `}
                 and animate in the next page
               </TransitionLink>
-              <br />
+              <br/>
               <TransitionLink
                 to={targetUrl}
                 exit={{
@@ -80,7 +84,7 @@ const TransitionLinks = () => {
                 </span>
                 and give us a dark theme when we get there.
               </TransitionLink>
-              <br />
+              <br/>
             </div>
           </section>
           <TransitionPortal>

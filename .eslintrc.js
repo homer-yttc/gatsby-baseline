@@ -15,15 +15,20 @@ module.exports = {
     'node': true,
   },
   'rules': {
-    'strict': 0,
+    'arrow-body-style': ['error', 'as-needed'],
+    'arrow-parens': ['error', 'always'],
+    'implicit-arrow-linebreak': 0,
+    'import/no-unresolved': 0,
+    'import/prefer-default-export': 0,
+    'linebreak-style': 0,
+    'no-unused-expressions': 0,
+    'operator-linebreak': [2, 'after'],
     'react/jsx-filename-extension': 0,
     'react/jsx-tag-spacing': 0,
     'react/jsx-one-expression-per-line': 0,
-    'import/no-unresolved': 0,
-    'no-unused-expressions': 0,
-    'linebreak-style': 0,
-    'operator-linebreak': [2, 'after'],
     'semi': ['error', 'never'],
+    'spaced-comment': 0,
+    'strict': 0,
     'react/jsx-wrap-multilines': ['error', {
       'declaration': 'parens',
       'assignment': 'parens',
@@ -33,7 +38,6 @@ module.exports = {
       'logical': 'ignore',
       'prop': 'ignore',
     }],
-    'arrow-parens': ['error', 'always'],
     'comma-dangle': ['error', {
       'arrays': 'only-multiline',
       'objects': 'only-multiline',
@@ -42,8 +46,10 @@ module.exports = {
       'functions': 'never',
     }],
     'quotes': ['warn', 'backtick'],
-    'implicit-arrow-linebreak': 0,
-    'object-curly-newline': ['error', { 'multiline': true, 'consistent': true }],
+    'object-curly-newline': ['error', {
+      'multiline': true,
+      'consistent': true,
+    }],
     'graphql/template-strings': [
       'error',
       {

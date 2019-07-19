@@ -1,14 +1,12 @@
 import React from 'react'
-import { SEO } from '../meta'
-import { Layout } from '../layout'
-import { KitchenSink } from '../samples'
+import Layout from '../layout/Layout/Layout'
+import KitchenSink from '../samples/KitchenSink/KitchenSink'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home"/>
+const Homepage = () => (
+  <Layout pageTitle="Home">
     <h1>Home</h1>
     <KitchenSink/>
   </Layout>
 )
 
-export default IndexPage
+export default Homepage

@@ -64,7 +64,7 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 **The Issue:**<br/>The concept of moving away from awkwardly linked files is desirable, as it can be hard to move files around later in refactors. However, IDE support has no concept of where you're referencing these methods and components from sadly. As such, this breaks the ability to jump to definitions which is a detriment to workflow. So as practical as it is to want a clean manageable way to associate files, it just didn't pan out in actual usage. 
 
-**Resolution:**<br/>While there is a bit of manual effort, a clean viable alternate was found. With components grouped into logicial concerns, i.e `layout`, `media`, `meta`, and the desire to namespace these effectively, it gets verbose targeting `../layout/Layout/Layout` named components.
+<del>**Resolution:**<br/>While there is a bit of manual effort, a clean viable alternate was found. With components grouped into logicial concerns, i.e `layout`, `media`, `meta`, and the desire to namespace these effectively, it gets verbose targeting `../layout/Layout/Layout` named components.
 
 While module imports don't allow the right flexibility, because Gatsby is based in webpack, we're not limited and can set up a given file to use node style importing with `require` statements.
 
@@ -90,6 +90,9 @@ import { Layout } from '../layout' // Assumes the index.js, and pulls the correc
 ```
 
 In the long run, this will help address both concerns on refactoring and inherent IDE support with clean simple pathing.
+</del>
+**Failed Resolution, abandoned:**<br>
+So, after many debug cycles to see why a series of issues with react hooks from the about implementation, I've abandoned this endeavour and am accepting being a slave to relative pathing to maintain full IDE support and refactor controls. Where ideals mean reality, sometimes things just don't work out sadly. Lesson learned, moving on!
 
 ## ☮️ Inspiration taken from:
 [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)<br/>
