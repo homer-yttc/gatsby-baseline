@@ -5,19 +5,24 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+// Libs
 import React from 'react'
-import PropTypes from 'prop-types'
-
-import { Header } from '../index'
+import * as PropTypes from 'prop-types'
+// State
+import useSiteMetadata from '../../../lib/state/useSiteMetadata'
+// Deps
+import Header from '../Header/Header'
+import SEO from '../../meta/SEO/SEO'
+// Assets
 import './reset.css'
 import './layout.scss'
-import { useSiteMetadata } from '../../../lib/state'
 
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }) => {
   const { title } = useSiteMetadata()
 
   return (
     <>
+      <SEO title={pageTitle}/>
       <Header siteTitle={title}/>
       <div className="main-wrapper">
         <main>{children}</main>
@@ -32,6 +37,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
+  pageTitle: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }
 

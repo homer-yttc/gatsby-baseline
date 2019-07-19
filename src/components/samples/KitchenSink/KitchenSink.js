@@ -1,8 +1,8 @@
 import React from 'react'
 import * as PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { Image } from '../../media'
-import { TransitionLinks } from '../index'
+import Image from '../../media/Image/Image'
+import TransitionLinks from '../TransitionLinks/TransitionLinks'
 
 const KitchenSink = ({ display }) => {
   if (display) {

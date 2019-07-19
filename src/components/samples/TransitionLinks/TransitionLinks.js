@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useLayoutEffect, useState } from 'react'
 import { has, isObject, isUndefined } from 'lodash'
 // import * as PropTypes from 'prop-types'
 import TransitionLink, { TransitionPortal } from 'gatsby-plugin-transition-link'
@@ -8,7 +8,7 @@ import useWindow from '../../../lib/hooks/useWindow'
 import { test, verticalAnimation } from './animations'
 
 const TransitionLinks = () => {
-  const window = useWindow()
+  const win = useWindow()
 
   const [currentPath, setCurrentPath] = useState()
   const [layoutContents, setLayoutContents] = useState()
@@ -17,14 +17,15 @@ const TransitionLinks = () => {
   const getTransitionCover = useCallback((n) => setTransitionCover(n), [])
   let targetUrl = `/`
 
-  if (!isUndefined(window)) {
-    targetUrl = window.location.pathname === `/` ? `/page-2` : `/`
-  }
-  useEffect(() => {
-    if (isObject(window) && has(window, 'location.pathname')) {
-      setCurrentPath(window.location.pathname)
+  useLayoutEffect(() => {
+    if (!isUndefined(win)) {
+      targetUrl = win.location.pathname === `/` ? `/page-2` : `/`
     }
-  }, [window])
+
+    if (isObject(win) && has(win, `location.pathname`)) {
+      setCurrentPath(win.location.pathname)
+    }
+  }, [win])
 
   return (
     <Location>

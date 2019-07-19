@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
 
 const useWindow = () => {
   const [win, setWin] = useState()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     try {
       setWin(window)
     } catch (e) {
