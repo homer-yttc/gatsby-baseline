@@ -58,6 +58,9 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 - [gatsby-plugin-recaptcha](https://github.com/escaladesports/gatsby-plugin-recaptcha) & [react-recaptcha](https://github.com/appleboy/react-recaptcha) for easy use of reCaptcha on site
 - [gatsby-plugin-csp](https://github.com/bejamas/gatsby-plugin-csp) easy Content Security Policy control to aid in preventing XSS or injection attacks
 
+*Hosting*
+- [gatsby-plugin-netlify](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-netlify) for support in netlify builds
+
 ## ⚰️ Failures and Lessons
 ### [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import)
 > Set Webpack to resolve root, allowing you to import modules from an absolute project path rather than relative ../../ paths.

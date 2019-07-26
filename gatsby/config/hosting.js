@@ -1,25 +1,4 @@
 module.exports = [
-  {
-    resolve: `gatsby-plugin-robots-txt`,
-    options: {
-      resolveEnv: () => process.env.NETLIFY_ENV,
-      env: {
-        production: {
-          policy: [{ userAgent: `*` }],
-        },
-        'branch-deploy': {
-          policy: [{ userAgent: `*`, disallow: [`/`] }],
-          sitemap: null,
-          host: null,
-        },
-        'deploy-preview': {
-          policy: [{ userAgent: `*`, disallow: [`/`] }],
-          sitemap: null,
-          host: null,
-        },
-      },
-    },
-  },
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
   // `gatsby-plugin-offline`,
