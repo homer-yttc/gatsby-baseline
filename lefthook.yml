@@ -8,7 +8,7 @@ pre-commit:
     formatter:
       files: git diff --name-only @{push}
       glob: "*.{js,jsx,scss}"
-      run: prettier --write {files} --loglevel silent
+      run: prettier --write {files} --loglevel error
     lint-check:
       files: git diff --name-only @{push}
       glob: "*.{js,jsx}"
