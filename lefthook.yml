@@ -3,7 +3,7 @@ pre-commit:
   commands:
     formatter:
       glob: "*.{js,jsx,scss}"
-      run: prettier -c {staged_files}
+      run: prettier --check {staged_files}
     lint-check:
       glob: "*.{js,jsx}"
       run: eslint {staged_files} --quiet
