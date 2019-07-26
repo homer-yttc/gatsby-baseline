@@ -1,4 +1,14 @@
+const {
+  siteMetadata: { siteUrl },
+} = require('../../site-settings')
+
 module.exports = [
+  {
+    resolve: `gatsby-plugin-canonical-urls`,
+    options: {
+      siteUrl,
+    },
+  },
   {
     resolve: `gatsby-plugin-robots-txt`,
     options: {

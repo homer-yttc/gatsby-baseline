@@ -1,5 +1,5 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react'
-import { has, isObject, isUndefined } from 'lodash'
+import { has } from 'lodash'
 // import * as PropTypes from 'prop-types'
 import TransitionLink, { TransitionPortal } from 'gatsby-plugin-transition-link'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
@@ -11,19 +11,17 @@ const TransitionLinks = () => {
   const win = useWindow()
 
   const [currentPath, setCurrentPath] = useState()
+  const [targetUrl, setTargetUrl] = useState(`/`)
   const [layoutContents, setLayoutContents] = useState()
   const [transitionCover, setTransitionCover] = useState()
   const getLayoutContents = useCallback((n) => setLayoutContents(n), [])
   const getTransitionCover = useCallback((n) => setTransitionCover(n), [])
-  let targetUrl = `/`
 
   useLayoutEffect(() => {
-    if (!isUndefined(win)) {
-      targetUrl = win.location.pathname === `/` ? `/page-2` : `/`
-    }
-
-    if (isObject(win) && has(win, `location.pathname`)) {
-      setCurrentPath(win.location.pathname)
+    if (has(win, `location.pathname`)) {
+      // console.log('win', win, window.location.pathname, window.location.pathname === '/')
+      setTargetUrl(window.location.pathname === `/` ? `/page-2` : `/`)
+      setCurrentPath(window.location.pathname)
     }
   }, [win])
 
@@ -35,6 +33,8 @@ const TransitionLinks = () => {
             <div>
               <h2>Transition Links</h2>
               {currentPath && <span>Path: {location.pathname}</span>}
+              <br />
+              {targetUrl && <span>Target: {targetUrl}</span>}
               <br />
               <AniLink cover to={targetUrl} direction="right">
                 Go to a page, with a cover right
