@@ -15,7 +15,7 @@ import Header from '../Header/Header'
 import SEO from '../../meta/SEO/SEO'
 // Assets
 import './reset.css'
-import './layout.scss'
+import './_layout.scss'
 
 const Layout = ({ pageTitle, children }) => {
   const { title } = useSiteMetadata()

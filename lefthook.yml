@@ -1,0 +1,15 @@
+pre-commit:
+  parallel: false
+  commands:
+    lint-fix:
+      files: git diff --name-only @{push}
+      glob: "*.{js,jsx}"
+      run: eslint {files} --ext .js,.jsx --quiet
+    formatter:
+      files: git diff --name-only @{push}
+      glob: "*.{js,jsx,scss}"
+      run: prettier --write {files} --loglevel silent
+    lint-check:
+      files: git diff --name-only @{push}
+      glob: "*.{js,jsx}"
+      run: eslint {files} --ext .js,.jsx --quiet
