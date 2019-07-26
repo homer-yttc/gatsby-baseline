@@ -8,7 +8,7 @@
     "dev": "gatsby develop",
     "devssl": "gatsby develop --https",
     "devver": "gatsby develop --verbose",
-    "lint": "npm run lint:fix && npm run lint:format && npm run lint:check && npm run lint:style",
+    "lint": "npm run lint:format && npm run lint:fix && npm run lint:style",
     "lint:check": "eslint ./ --ext .js,.jsx --quiet",
     "lint:fix": "eslint ./ --ext .js,.jsx --fix --quiet",
     "lint:format": "prettier --write ./**/*.{js,jsx,scss} --loglevel error",

@@ -1,20 +1,12 @@
 pre-commit:
   parallel: false
   commands:
-    lint-fix:
-      glob: "*.{js,jsx}"
-      run: eslint {staged_files} --ext .js,.jsx --quiet
     formatter:
       glob: "*.{js,jsx,scss}"
-      run: prettier --write {staged_files} --loglevel error
+      run: prettier -c {staged_files}
     lint-check:
       glob: "*.{js,jsx}"
-      run: eslint {staged_files} --ext .js,.jsx --quiet
+      run: eslint {staged_files} --quiet
     sass-check:
       glob: "*.{scss}"
-      run: stylelint --fix --quiet {staged_files}
-pre-push:
-  parallel: false
-  commands:
-    add-staged-leftovers:
-      run: git add {staged_files}
+      run: stylelint --quiet {staged_files}
