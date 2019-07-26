@@ -1,2 +1,6 @@
-tests/performance/*
+tests/performance
 node_modules
+public
+scripts
+graphql
+.cache

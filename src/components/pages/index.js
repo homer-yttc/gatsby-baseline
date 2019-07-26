@@ -5,7 +5,7 @@ import KitchenSink from '../samples/KitchenSink/KitchenSink'
 const Homepage = () => (
   <Layout pageTitle="Home">
     <h1>Home</h1>
-    <KitchenSink/>
+    <KitchenSink />
   </Layout>
 )
 
