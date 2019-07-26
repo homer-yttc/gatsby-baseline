@@ -13,6 +13,8 @@ pre-commit:
     sass-check:
       glob: "*.{scss}"
       run: stylelint --fix --quiet {staged_files}
-    # For any files updated by the linters, fixers, add them back for the commit itself
-    add-modified:
+pre-push:
+  parallel: false
+  commands:
+    add-staged-leftovers:
       run: git add {staged_files}

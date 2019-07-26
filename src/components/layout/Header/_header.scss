@@ -1,14 +1,14 @@
 @import 'baseStyle';
 
 .header {
-  margin-bottom: 1.45rem;
   background: $c-primary;
+  margin-bottom: 1.45rem;
 }
 
 .header-wrapper {
   margin: 0 auto;
-  padding: 1.45rem 1.0875rem;
   max-width: 960px;
+  padding: 1.45rem 1.0875rem;
 }
 
 .header-title {
@@ -16,6 +16,6 @@
 }
 
 .header-link {
-  text-decoration: none;
+  text-decoration: dotted;
   color: white;
 }
