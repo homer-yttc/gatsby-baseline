@@ -15,15 +15,15 @@ import Header from '../Header/Header'
 import SEO from '../../meta/SEO/SEO'
 // Assets
 import './reset.css'
-import './layout.scss'
+import './_layout.scss'
 
 const Layout = ({ pageTitle, children }) => {
   const { title } = useSiteMetadata()
 
   return (
     <>
-      <SEO title={pageTitle}/>
-      <Header siteTitle={title}/>
+      <SEO title={pageTitle} />
+      <Header siteTitle={title} />
       <div className="main-wrapper">
         <main>{children}</main>
         <footer>

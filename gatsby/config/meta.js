@@ -15,12 +15,12 @@ module.exports = [
         production: {
           policy: [{ userAgent: `*` }],
         },
-        "branch-deploy": {
+        'branch-deploy': {
           policy: [{ userAgent: `*`, disallow: [`/`] }],
           sitemap: null,
           host: null,
         },
-        "deploy-preview": {
+        'deploy-preview': {
           policy: [{ userAgent: `*`, disallow: [`/`] }],
           sitemap: null,
           host: null,

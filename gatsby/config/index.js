@@ -6,12 +6,4 @@ const meta = require(`./meta`)
 const hosting = require(`./hosting`)
 const security = require(`./security`)
 
-module.exports = [
-  ...accessibility,
-  ...ui,
-  ...media,
-  ...tooling,
-  ...meta,
-  ...hosting,
-  ...security,
-]
+module.exports = [...accessibility, ...ui, ...media, ...tooling, ...meta, ...hosting, ...security]

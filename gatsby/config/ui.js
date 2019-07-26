@@ -6,6 +6,11 @@ module.exports = [
     resolve: `gatsby-plugin-sass`,
     options: {
       includePaths: [srcPaths.styles],
+      useResolveUrlLoader: {
+        options: {
+          sourceMap: true, //default is false
+        },
+      },
     },
   },
   {

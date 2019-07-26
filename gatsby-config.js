@@ -4,12 +4,12 @@ const { GHPAGES } = process.env
 
 const config = {
   siteMetadata,
-  plugins
+  plugins,
 }
 
 if (GHPAGES === `1`) {
   Object.assign(config, {
-    pathPrefix: `/gatsby-baseline`
+    pathPrefix: `/gatsby-baseline`,
   })
 }
 

@@ -1,4 +1,3 @@
-
 module.exports = [
   `gatsby-plugin-eslint`,
   `gatsby-plugin-catch-links`,
