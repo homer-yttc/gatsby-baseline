@@ -15,9 +15,9 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 *UI*
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
-- [gatsby-delayed-link](https://github.com/escaladesports/gatsby-delayed-link) to optionally delay Gatsby `<Link>` for interactions, such as analytics firing 
 - [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
 - [gatsby-plugin-sass](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass), 'cause SASS still rules
+- [gatsby-plugin-postcss](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss) for PostCSS support to clean up/unify built css
 - [gatsby-plugin-prefetch-google-fonts](https://github.com/escaladesports/gatsby-plugin-prefetch-google-fonts) for pre-fetching google fonts in builds 
 - [gatsby-plugin-fastclick](https://github.com/escaladesports/gatsby-plugin-fastclick) for better mobile click response with [Fastclick](https://github.com/ftlabs/fastclick)
 - [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for easy detection of when elements have been scrolled into view
@@ -39,11 +39,13 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 *Meta*
 - From core: `gatsby-plugin-react-helmet`, `gatsby-plugin-manifest`
+- [gatsby-plugin-canonical-urls](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-canonical-urls) for setting desired canonical site path on pages
 - [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) _Gatsby's official_ sitemap builder 
 - [gatsby-plugin-robots-txt](https://github.com/mdreizin/gatsby-plugin-robots-txt) to help manage robots across different envs, ensuring they're stopped where needed
 
 *Tooling*
 - From core: `gatsby-source-filesystem`
+- [Lefthook](https://github.com/Arkweid/lefthook) for support in managing/implementing git hooks
 - [Prettier](https://prettier.io/) for code style
 - [gatsby-plugin-eslint](https://github.com/mongkuen/gatsby-plugin-eslint) with [preset config](./.eslintrc.js) for fine tune control. Out of the box extends from: `airbnb`, `eslint:recommended`, `plugin:react/recommended`
 - [gatsby-plugin-extract-schema](https://github.com/NickyMeuleman/gatsby-plugin-extract-schema) automatically extract Gatsby's graphql schemas, and process them against the eslint'ing, to ensure devs are not going out of bounds
@@ -98,3 +100,4 @@ So, after many debug cycles to see why a series of issues with react hooks from 
 [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)<br/>
 [gatsby-advanced-starter](https://github.com/Vagr9K/gatsby-advanced-starter)<br/>
 [gatsby-universal](https://github.com/fabe/gatsby-universal)<br/>
+[staticfy](https://github.com/PetrNikolas/staticfy)<br/>

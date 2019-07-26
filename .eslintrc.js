@@ -7,10 +7,13 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es6: true,
+    amd: true,
   },
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': ['error', 'always'],
+    camelcase: 0,
     'implicit-arrow-linebreak': 0,
     'import/no-unresolved': 0,
     'import/prefer-default-export': 0,

@@ -1,14 +1,14 @@
 @import 'baseStyle';
 
 .header {
-  background: $c-primary;
   margin-bottom: 1.45rem;
+  background: $c-primary;
 }
 
 .header-wrapper {
   margin: 0 auto;
-  max-width: 960px;
   padding: 1.45rem 1.0875rem;
+  max-width: 960px;
 }
 
 .header-title {

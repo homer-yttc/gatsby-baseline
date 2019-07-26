@@ -2,14 +2,14 @@ pre-commit:
   parallel: false
   commands:
     lint-fix:
-      files: git diff --name-only @{push}
       glob: "*.{js,jsx}"
-      run: eslint {files} --ext .js,.jsx --quiet
+      run: eslint {staged_files} --ext .js,.jsx --quiet
     formatter:
-      files: git diff --name-only @{push}
       glob: "*.{js,jsx,scss}"
-      run: prettier --write {files} --loglevel error
+      run: prettier --write {staged_files} --loglevel error
     lint-check:
-      files: git diff --name-only @{push}
       glob: "*.{js,jsx}"
-      run: eslint {files} --ext .js,.jsx --quiet
+      run: eslint {staged_files} --ext .js,.jsx --quiet
+    sass-check:
+      glob: "*.{scss}"
+      run: stylelint --fix --quiet {staged_files}
