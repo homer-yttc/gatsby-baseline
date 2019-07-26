@@ -13,6 +13,17 @@ module.exports = [
   `gatsby-plugin-fastclick`,
   `gatsby-plugin-transition-link`,
   {
+    resolve: `gatsby-plugin-sass`,
+    options: {
+      includePaths: [srcPaths.styles],
+      useResolveUrlLoader: {
+        options: {
+          sourceMap: process.env.NODE_ENV === `development`, //default is false
+        },
+      },
+    },
+  },
+  {
     resolve: `gatsby-plugin-postcss`,
     options: {
       postCssPlugins: [
@@ -33,17 +44,6 @@ module.exports = [
         postcssPresetEnv({ stage: 3 }),
         cssnano(),
       ],
-    },
-  },
-  {
-    resolve: `gatsby-plugin-sass`,
-    options: {
-      includePaths: [srcPaths.styles],
-      useResolveUrlLoader: {
-        options: {
-          sourceMap: process.env.NODE_ENV === `development`, //default is false
-        },
-      },
     },
   },
   {

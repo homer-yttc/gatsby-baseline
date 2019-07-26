@@ -1,4 +1,7 @@
-const { manifest } = require(`../../site-settings`)
+const {
+  manifest,
+  siteMetadata: { siteUrl },
+} = require(`../../site-settings`)
 
 module.exports = [
   `gatsby-plugin-react-helmet`,
@@ -26,6 +29,12 @@ module.exports = [
           host: null,
         },
       },
+    },
+  },
+  {
+    resolve: `gatsby-plugin-canonical-urls`,
+    options: {
+      siteUrl,
     },
   },
 ]
