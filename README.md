@@ -14,12 +14,12 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 ## 🎯 Features
 
 *UI*
+- [gatsby-plugin-fastclick](https://github.com/escaladesports/gatsby-plugin-fastclick) for better mobile click response with [Fastclick](https://github.com/ftlabs/fastclick)
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
-- [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
 - [gatsby-plugin-sass](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass), 'cause SASS still rules
 - [gatsby-plugin-postcss](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss) for PostCSS support to clean up/unify built css
 - [gatsby-plugin-prefetch-google-fonts](https://github.com/escaladesports/gatsby-plugin-prefetch-google-fonts) for pre-fetching google fonts in builds 
-- [gatsby-plugin-fastclick](https://github.com/escaladesports/gatsby-plugin-fastclick) for better mobile click response with [Fastclick](https://github.com/ftlabs/fastclick)
+- [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
 - [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for easy detection of when elements have been scrolled into view
 
 *Accessibility*
@@ -30,7 +30,7 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 - [gatsby-plugin-svgr](https://github.com/zabute/gatsby-plugin-svgr) SVGO processing for clean consistent SVG usage, resulting in usable inline or React Component tags
 
 *State*
-- [PENDING] React Context for global data and UI state, with SSR
+- `useAppContext` React Context for global data and UI state across Gatsby site inspired by [State Management with React Hooks and Context API in 10 lines of code!](https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c) and [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)
 - [PENDING] Schema JSONLD
 
 *Testing*
@@ -39,24 +39,30 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 *Meta*
 - From core: `gatsby-plugin-react-helmet`, `gatsby-plugin-manifest`
-- [gatsby-plugin-canonical-urls](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-canonical-urls) for setting desired canonical site path on pages
 - [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) _Gatsby's official_ sitemap builder 
 - [gatsby-plugin-robots-txt](https://github.com/mdreizin/gatsby-plugin-robots-txt) to help manage robots across different envs, ensuring they're stopped where needed
+- [gatsby-plugin-canonical-urls](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-canonical-urls) for setting desired canonical site path on pages
+
+*Data Source*
+- From core: `gatsby-source-filesystem`
+- [gatsby-plugin-page-creator](https://www.gatsbyjs.org/packages/gatsby-plugin-page-creator/) _Gatsby's official_ helper plugin, for moving `pages` to a more meaningful place 
+- [gatsby-plugin-extract-schema](https://github.com/NickyMeuleman/gatsby-plugin-extract-schema) automatically extract Gatsby's graphql schemas, and process them against the eslint'ing, to ensure devs are not going out of bounds
 
 *Tooling*
-- From core: `gatsby-source-filesystem`
 - [Lefthook](https://github.com/Arkweid/lefthook) for support in managing/implementing git hooks
 - [Prettier](https://prettier.io/) for code style
 - [gatsby-plugin-eslint](https://github.com/mongkuen/gatsby-plugin-eslint) with [preset config](./.eslintrc.js) for fine tune control. Out of the box extends from: `airbnb`, `eslint:recommended`, `plugin:react/recommended`
-- [gatsby-plugin-extract-schema](https://github.com/NickyMeuleman/gatsby-plugin-extract-schema) automatically extract Gatsby's graphql schemas, and process them against the eslint'ing, to ensure devs are not going out of bounds
-- [gatsby-plugin-page-creator](https://www.gatsbyjs.org/packages/gatsby-plugin-page-creator/) _Gatsby's official_ helper plugin, for moving `pages` to a more meaningful place 
 - [gatsby-plugin-catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/) _Gatsby's official_ helper plugin, for detecting existing Gatsby routes found in `<a>` tags and converting them to `<Link>`s automatically
-- [gatsby-plugin-webpack-bundle-analyzer](https://github.com/escaladesports/gatsby-plugin-webpack-bundle-analyzer) which is built on top of [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to keep an eye on your bundle sizes
 - [gatsby-plugin-polyfill-io](https://github.com/escaladesports/gatsby-plugin-polyfill-io) optional polyfill for [supporting es6/next features](https://polyfill.io/v3/url-builder/) in s8it browsers 
+- [gatsby-plugin-webpack-bundle-analyzer](https://github.com/escaladesports/gatsby-plugin-webpack-bundle-analyzer) which is built on top of [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to keep an eye on your bundle sizes
 
 *Security*
 - [gatsby-plugin-recaptcha](https://github.com/escaladesports/gatsby-plugin-recaptcha) & [react-recaptcha](https://github.com/appleboy/react-recaptcha) for easy use of reCaptcha on site
 - [gatsby-plugin-csp](https://github.com/bejamas/gatsby-plugin-csp) easy Content Security Policy control to aid in preventing XSS or injection attacks
+
+*Hosting*
+- From core: `gatsby-plugin-offline` (optionally enabled, not enforced)
+- [gatsby-plugin-netlify](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-netlify) for support in netlify builds
 
 ## ⚰️ Failures and Lessons
 ### [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import)
@@ -74,11 +80,10 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 ```js
 // components/layout/index.js
-/* eslint-disable quotes */
-const Layout = require('./Layout/Layout')
-const Header = require('./Header/Header')
+import Layout from './Layout/Layout'
+import Header  from './Header/Header'
 
-module.exports = {
+export {
   Layout,
   Header
 }

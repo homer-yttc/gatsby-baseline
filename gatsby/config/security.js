@@ -1,14 +1,14 @@
 module.exports = [
   {
-    resolve: `gatsby-plugin-recaptcha`,
+    resolve: 'gatsby-plugin-recaptcha',
     options: {
       // async: false,
       // defer: false,
-      // args: `?onload=onloadCallback&render=explicit`,
+      // args: '?onload=onloadCallback&render=explicit',
     },
   },
   {
-    resolve: `gatsby-plugin-csp`,
+    resolve: 'gatsby-plugin-csp',
     options: {
       disableOnDev: true,
       // Changes Header to Content-Security-Policy-Report-Only for csp testing purposes
@@ -17,9 +17,9 @@ module.exports = [
       mergeStyleHashes: true, // you can disable styles sha256 hashes
       mergeDefaultDirectives: true,
       directives: {
-        'script-src': `'self' www.google-analytics.com`,
-        'style-src': `'self' 'unsafe-inline'`,
-        'img-src': `'self' data: www.google-analytics.com`,
+        'script-src': "'self' www.google-analytics.com",
+        'style-src': "'self' 'unsafe-inline'",
+        'img-src': "'self' data: www.google-analytics.com",
         // you can add your directives or override defaults
       },
     },

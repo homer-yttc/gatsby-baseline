@@ -11,16 +11,16 @@ const TransitionLinks = () => {
   const win = useWindow()
 
   const [currentPath, setCurrentPath] = useState()
-  const [targetUrl, setTargetUrl] = useState(`/`)
+  const [targetUrl, setTargetUrl] = useState('/')
   const [layoutContents, setLayoutContents] = useState()
   const [transitionCover, setTransitionCover] = useState()
   const getLayoutContents = useCallback((n) => setLayoutContents(n), [])
   const getTransitionCover = useCallback((n) => setTransitionCover(n), [])
 
   useLayoutEffect(() => {
-    if (has(win, `location.pathname`)) {
+    if (has(win, 'location.pathname')) {
       // console.log('win', win, window.location.pathname, window.location.pathname === '/')
-      setTargetUrl(window.location.pathname === `/` ? `/page-2` : `/`)
+      setTargetUrl(window.location.pathname === '/' ? '/page-2' : '/')
       setCurrentPath(window.location.pathname)
     }
   }, [win])
@@ -49,19 +49,18 @@ const TransitionLinks = () => {
                 exit={{
                   length: 1,
                   trigger: ({ exit }) =>
-                    verticalAnimation(transitionCover, layoutContents, exit, `down`),
-                  state: { test: `exit state` },
+                    verticalAnimation(transitionCover, layoutContents, exit, 'down'),
+                  state: { test: 'exit state' },
                 }}
                 entry={{
                   delay: 0.5,
                   trigger: ({ entry, node }) => test(entry, node),
                 }}
               >
-                Go to a page, that way{` `}
+                Go to a page, that way{' '}
                 <span aria-label="pointing up" role="img">
                   👇
-                </span>
-                {` `}
+                </span>{' '}
                 and animate in the next page
               </TransitionLink>
               <br />
@@ -70,15 +69,15 @@ const TransitionLinks = () => {
                 exit={{
                   length: 1.2,
                   trigger: ({ exit }) =>
-                    verticalAnimation(transitionCover, layoutContents, exit, `up`),
+                    verticalAnimation(transitionCover, layoutContents, exit, 'up'),
                 }}
                 entry={{
                   delay: 0.5,
                   length: 1,
-                  state: { layoutTheme: `dark` },
+                  state: { layoutTheme: 'dark' },
                 }}
               >
-                Go to a page, that way{` `}
+                Go to a page, that way{' '}
                 <span aria-label="pointing up" role="img">
                   ☝️
                 </span>
@@ -91,13 +90,13 @@ const TransitionLinks = () => {
             <div
               ref={getTransitionCover}
               style={{
-                position: `fixed`,
-                background: `#4b2571`,
+                position: 'fixed',
+                background: '#4b2571',
                 top: 0,
                 left: 0,
-                width: `100vw`,
-                height: `100vh`,
-                transform: `translateY(100%)`,
+                width: '100vw',
+                height: '100vh',
+                transform: 'translateY(100%)',
               }}
             />
           </TransitionPortal>

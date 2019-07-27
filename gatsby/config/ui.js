@@ -1,19 +1,30 @@
+const postcssImport = require('postcss-import')
+const postcssExtend = require('postcss-extend')
+const postcssNesting = require('postcss-nesting')
+const postcssPxToRem = require('postcss-pxtorem')
+const postcssPresetEnv = require('postcss-preset-env')
+const cssnano = require('cssnano')
 const {
   srcPaths,
   manifest: { theme_color },
-} = require(`../../site-settings`)
-const postcssImport = require(`postcss-import`)
-const postcssExtend = require(`postcss-extend`)
-const postcssNesting = require(`postcss-nesting`)
-const postcssPxToRem = require(`postcss-pxtorem`)
-const postcssPresetEnv = require(`postcss-preset-env`)
-const cssnano = require(`cssnano`)
+} = require('../../site-settings')
 
 module.exports = [
-  `gatsby-plugin-fastclick`,
-  `gatsby-plugin-transition-link`,
+  'gatsby-plugin-fastclick',
+  'gatsby-plugin-transition-link',
   {
-    resolve: `gatsby-plugin-postcss`,
+    resolve: 'gatsby-plugin-sass',
+    options: {
+      includePaths: [srcPaths.styles],
+      useResolveUrlLoader: {
+        options: {
+          sourceMap: process.env.NODE_ENV === 'development', //default is false
+        },
+      },
+    },
+  },
+  {
+    resolve: 'gatsby-plugin-postcss',
     options: {
       postCssPlugins: [
         postcssImport(), // Add support for sass-like '@import'
@@ -27,7 +38,7 @@ module.exports = [
           propList: [],
           replace: true, // Replace pixels with rems
           rootValue: 16, // Root font-size
-          selectorBlackList: [`html`], // Ignore pixels used for html
+          selectorBlackList: ['html'], // Ignore pixels used for html
           unitPrecision: 4, // Round rem units to 4 digits
         }),
         postcssPresetEnv({ stage: 3 }),
@@ -36,33 +47,22 @@ module.exports = [
     },
   },
   {
-    resolve: `gatsby-plugin-sass`,
-    options: {
-      includePaths: [srcPaths.styles],
-      useResolveUrlLoader: {
-        options: {
-          sourceMap: process.env.NODE_ENV === `development`, //default is false
-        },
-      },
-    },
-  },
-  {
-    resolve: `gatsby-plugin-prefetch-google-fonts`,
+    resolve: 'gatsby-plugin-prefetch-google-fonts',
     options: {
       fonts: [
         {
-          family: `Oswald`,
-          subsets: [`latin`],
+          family: 'Oswald',
+          subsets: ['latin'],
         },
         {
-          family: `Open Sans`,
-          variants: [`400`, `700`],
+          family: 'Open Sans',
+          variants: ['400', '700'],
         },
       ],
     },
   },
   {
-    resolve: `gatsby-plugin-nprogress`,
+    resolve: 'gatsby-plugin-nprogress',
     options: {
       // Setting a color is optional.
       color: theme_color,

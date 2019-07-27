@@ -1,9 +1,9 @@
 const plugins = []
 
 // Only execute during development.
-if (process.env === `development`) {
+if (process.env === 'development') {
   plugins.push({
-    resolve: `gatsby-plugin-accessibilityjs`,
+    resolve: 'gatsby-plugin-accessibilityjs',
     options: {
       injectStyles: `
         .accessibility-error {
@@ -22,7 +22,7 @@ if (process.env === `development`) {
           transform: translateY(-100%);
         }
       `,
-      errorClassName: `accessibility-error`,
+      errorClassName: 'accessibility-error',
       // onError: (error) => {
       //   // do something with the error
       // },

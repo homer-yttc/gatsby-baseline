@@ -5,3 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+
+const { wrapRootElement } = require('./gatsby/browser/wrapRootElement')
+
+exports.wrapRootElement = wrapRootElement
