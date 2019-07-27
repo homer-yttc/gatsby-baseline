@@ -1,8 +1,8 @@
 import { Power1, TimelineMax } from 'gsap'
 
 export const verticalAnimation = (transitionCover, layoutContents, { length }, direction) => {
-  const directionTo = direction === `up` ? `-100%` : `100%`
-  const directionFrom = direction === `up` ? `100%` : `-100%`
+  const directionTo = direction === 'up' ? '-100%' : '100%'
+  const directionFrom = direction === 'up' ? '100%' : '-100%'
 
   // convert ms to s for gsap
   const seconds = length
@@ -10,7 +10,7 @@ export const verticalAnimation = (transitionCover, layoutContents, { length }, d
   return new TimelineMax()
     .set(transitionCover, { y: directionFrom })
     .to(transitionCover, seconds / 2, {
-      y: `0%`,
+      y: '0%',
       ease: Power1.easeInOut,
     })
     .set(layoutContents, { opacity: 0 })
@@ -23,11 +23,11 @@ export const verticalAnimation = (transitionCover, layoutContents, { length }, d
 export const test = (entry, node) =>
   // eslint-disable-next-line implicit-arrow-linebreak
   new TimelineMax().staggerFrom(
-    node.querySelectorAll(`h2, p, a, pre`),
+    node.querySelectorAll('h2, p, a, pre'),
     1,
     {
       opacity: 0,
-      y: `+=50`,
+      y: '+=50',
     },
     0.1
   )

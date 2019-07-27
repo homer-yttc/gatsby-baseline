@@ -1,17 +1,17 @@
 module.exports = [
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
-  // `gatsby-plugin-offline`,
+  // 'gatsby-plugin-offline',
   {
-    resolve: `gatsby-plugin-netlify`,
+    resolve: 'gatsby-plugin-netlify',
     options: {
-      // option to add more headers. `Link` headers are transformed by the below criteria
+      // option to add more headers. 'Link' headers are transformed by the below criteria
       headers: {
         // "/*": [
         //   "Basic-Auth: someuser:somepassword anotheruser:anotherpassword",
         // ],
       },
-      // option to add headers for all pages. `Link` headers are transformed by the below criteria
+      // option to add headers for all pages. 'Link' headers are transformed by the below criteria
       allPageHeaders: [],
       // mergeSecurityHeaders: true, // boolean to turn off the default security headers
       // mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
