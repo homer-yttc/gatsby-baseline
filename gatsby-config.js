@@ -1,5 +1,6 @@
-const { siteMetadata } = require(`./site-settings`)
-const plugins = require(`./gatsby/config`)
+const { siteMetadata } = require('./site-settings')
+const plugins = require('./gatsby/config')
+
 const { GHPAGES } = process.env
 
 // eslint-disable-next-line no-console
@@ -10,7 +11,7 @@ const config = {
   plugins,
 }
 
-if (GHPAGES === `1`) {
+if (GHPAGES === '1') {
   Object.assign(config, {
     pathPrefix: `/gatsby-baseline`,
   })

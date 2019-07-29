@@ -11,7 +11,7 @@ export const settingsActions = {
 }
 
 // eslint-disable-next-line no-unused-vars
-export const settingsReducer = ({ settings, ...state }, { type, payload }) => {
+export default ({ settings, ...state }, { type, payload }) => {
   switch (type) {
     case settingsActions.changeTheme:
       settings.theme = payload.theme

@@ -1,12 +1,12 @@
-import { settingsDefaults } from './settings/reducer'
+import { settingsDefaults } from './state/settings'
 
 export const LOCAL_STORAGE_KEY = ''
 
-const initialAppState = {
+const appStateDefaults = {
   version: process.env.version,
   settings: {
     ...settingsDefaults,
   },
 }
 
-export default initialAppState
+export default appStateDefaults
