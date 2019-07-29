@@ -1,0 +1,79 @@
+import React, { useState } from 'react'
+import { createPortal } from 'react-dom'
+import * as PropTypes from 'prop-types'
+import { isFunction } from 'lodash'
+import consola from 'consola'
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  // DialogContentText,
+  DialogTitle,
+} from '@material-ui/core'
+
+export const modalTypes = {
+  info: 'info',
+  confirm: 'confirm',
+}
+
+const useModal = ({ variant = modalTypes.info, title, content, onClose, onSubmit, button }) => {
+  const [modal, setModal] = useState()
+  const closeModal = () => {
+    consola.log('modal closing')
+    setModal()
+    isFunction(onClose) && onClose()
+  }
+
+  const submitModal = () => {
+    consola.log('modal submitting')
+    setModal()
+    isFunction(onSubmit) && onSubmit()
+  }
+
+  const triggerModal = () => {
+    setModal(
+      createPortal(
+        // eslint-disable-next-line react/jsx-boolean-value
+        <Dialog open={true}>
+          <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+          <DialogContent>{content}</DialogContent>
+          <DialogActions>
+            {variant === modalTypes.confirm && (
+              <>
+                <Button color="primary" onClick={submitModal}>
+                  Yes, I agree
+                </Button>
+                <Button color="primary" onClick={closeModal} autoFocus>
+                  CANCEL
+                </Button>
+              </>
+            )}
+
+            {variant === modalTypes.info && (
+              <Button color="primary" onClick={submitModal}>
+                OK
+              </Button>
+            )}
+          </DialogActions>
+        </Dialog>,
+        document.body
+      )
+    )
+  }
+
+  const modalTrigger = <Button onClick={triggerModal}>{button}</Button>
+
+  return { modal, triggerModal, modalTrigger }
+}
+
+useModal.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  variant: PropTypes.string,
+  button: PropTypes.string,
+  onSubmit: PropTypes.func,
+  onClose: PropTypes.func,
+}
+
+export default useModal

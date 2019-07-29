@@ -11,11 +11,11 @@ module.exports = {
     amd: true,
   },
   rules: {
-    'arrow-body-style': ['error', 'as-needed'],
+    'arrow-body-style': 0,
     'arrow-parens': ['error', 'always'],
     camelcase: 0,
     'comma-dangle': [
-      'error',
+      'warn',
       {
         arrays: 'only-multiline',
         objects: 'only-multiline',
@@ -29,6 +29,7 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/no-named-as-default': 0,
     'import/prefer-default-export': 0,
+    indent: ['warn'],
     'linebreak-style': 0,
     'no-param-reassign': ['error', { props: false }],
     'no-unused-expressions': [
@@ -39,6 +40,7 @@ module.exports = {
         allowTaggedTemplates: true,
       },
     ],
+    'no-trailing-spaces': ['warn'],
     'no-unused-vars': [
       'warn',
       {
@@ -51,9 +53,12 @@ module.exports = {
     'operator-linebreak': [2, 'after'],
     'object-curly-spacing': ['warn'],
     quotes: ['warn', 'single'],
+    'react/jsx-indent': ['warn'],
     'react/jsx-filename-extension': 0,
     'react/jsx-tag-spacing': 0,
     'react/jsx-one-expression-per-line': 0,
+    'react/jsx-closing-tag-location': ['warn'],
+    'react/require-default-props': ['warn'],
     semi: ['error', 'never'],
     'spaced-comment': 0,
     strict: 0,

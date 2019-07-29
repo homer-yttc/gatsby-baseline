@@ -9,7 +9,7 @@
 import React from 'react'
 import * as PropTypes from 'prop-types'
 // State
-import useSiteMetadata from '../../../lib/state/useSiteMetadata'
+import useSiteMetadata from '../../../lib/static/useSiteMetadata'
 // Deps
 import Header from '../Header/Header'
 import SEO from '../../meta/SEO/SEO'
@@ -34,9 +34,14 @@ const Layout = ({ pageTitle, children }) => {
   )
 }
 
+Layout.defaultProps = {
+  children: null,
+}
+
 Layout.propTypes = {
   pageTitle: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  children: PropTypes.any,
 }
 
 export default Layout

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "deploy:ghpages": "cross-env GHPAGES=1 gatsby build --prefix-paths && node ./scripts/deploy-ghpages.js",
-    "ci:lint": "eslint ./ --ext .js,.jsx --quiet && prettier --check ./**/*.{js,jsx,scss} && stylelint --quiet src/**/*.scss",
+    "ci:lint": "eslint ./ --ext .js,.jsx,.ts,.tsx --quiet && prettier --check ./**/*.{js,jsx,ts,tsx,scss} && stylelint --quiet src/**/*.scss",
     "ci:test": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run:ci",
     "gatsby:build": "gatsby build",
     "gatsby:dev": "gatsby develop",
@@ -14,8 +14,8 @@
     "hooks": "npx lefthook install",
     "hooks:run": "npx lefthook run",
     "lint": "npm run lint:format && npm run lint:fix && npm run lint:style",
-    "lint:fix": "eslint ./ --ext .js,.jsx --fix --quiet",
-    "lint:format": "prettier --write ./**/*.{js,jsx,scss} --loglevel error",
+    "lint:fix": "eslint ./ --ext .js,.jsx,.ts,.tsx --fix --quiet",
+    "lint:format": "prettier --write ./**/*.{js,jsx,ts,tsx,scss} --loglevel error",
     "lint:style": "stylelint --fix --quiet src/**/*.scss",
     "test": "cypress open",
     "test:build": "cross-env CYPRESS_SUPPORT=y start-server-and-test dev http://localhost:8000 cy:open",
@@ -35,8 +35,10 @@
     ]
   },
   "dependencies": {
+    "@material-ui/core": "^4.3.0",
     "@reach/router": "^1.2.1",
     "@svgr/webpack": "^4.3.1",
+    "consola": "^2.9.0",
     "cssnano": "^4.1.10",
     "gatsby": "^2.13.9",
     "gatsby-image": "^2.2.4",

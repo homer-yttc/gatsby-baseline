@@ -1,8 +1,8 @@
 import { assign, has, defer } from 'lodash'
-import { settingsReducer } from './settings/reducer'
-import { LOCAL_STORAGE_KEY } from './initialAppState'
+import { LOCAL_STORAGE_KEY } from './appState'
+import settingsReducer from './state/settings'
 
-export const AppReducer = (state, action) => {
+export default (state, action) => {
   // middleware goes here, i.e calling analytics service, etc.
   const newState = {
     ...state,
@@ -20,5 +20,3 @@ export const AppReducer = (state, action) => {
 
   return newState
 }
-
-export default AppReducer
