@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "scripts": {
+    "build": "gatsby build",
     "dev": "gatsby develop",
     "deploy:ghpages": "cross-env GHPAGES=1 gatsby build --prefix-paths && node ./scripts/deploy-ghpages.js",
     "ci:lint": "eslint ./ --ext .js,.jsx,.ts,.tsx --quiet && prettier --check ./**/*.{js,jsx,ts,tsx,scss} && stylelint --quiet src/**/*.scss",
@@ -38,7 +39,7 @@
     "@material-ui/core": "^4.3.0",
     "@reach/router": "^1.2.1",
     "@svgr/webpack": "^4.3.1",
-    "consola": "^2.9.0",
+    "badgee": "^2.0.5",
     "cssnano": "^4.1.10",
     "gatsby": "^2.13.9",
     "gatsby-image": "^2.2.4",

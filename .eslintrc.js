@@ -14,16 +14,7 @@ module.exports = {
     'arrow-body-style': 0,
     'arrow-parens': ['error', 'always'],
     camelcase: 0,
-    'comma-dangle': [
-      'warn',
-      {
-        arrays: 'only-multiline',
-        objects: 'only-multiline',
-        imports: 'never',
-        exports: 'only-multiline',
-        functions: 'never',
-      },
-    ],
+    'comma-dangle': ['warn', 'only-multiline'],
     'default-case': 0,
     'implicit-arrow-linebreak': 0,
     'import/no-unresolved': 0,
@@ -41,6 +32,7 @@ module.exports = {
       },
     ],
     'no-trailing-spaces': ['warn'],
+    'no-console': ['error'],
     'no-unused-vars': [
       'warn',
       {

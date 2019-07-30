@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { createPortal } from 'react-dom'
 import * as PropTypes from 'prop-types'
 import { isFunction } from 'lodash'
-import consola from 'consola'
 import {
   Button,
   Dialog,
@@ -11,6 +10,9 @@ import {
   // DialogContentText,
   DialogTitle,
 } from '@material-ui/core'
+import { consoleBadge, consoleStyles } from '../console'
+
+const con = consoleBadge('Modal', consoleStyles.white)
 
 export const modalTypes = {
   info: 'info',
@@ -20,13 +22,13 @@ export const modalTypes = {
 const useModal = ({ variant = modalTypes.info, title, content, onClose, onSubmit, button }) => {
   const [modal, setModal] = useState()
   const closeModal = () => {
-    consola.log('modal closing')
+    con.log('modal closing')
     setModal()
     isFunction(onClose) && onClose()
   }
 
   const submitModal = () => {
-    consola.log('modal submitting')
+    con.log('modal submitting')
     setModal()
     isFunction(onSubmit) && onSubmit()
   }

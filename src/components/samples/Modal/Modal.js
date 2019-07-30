@@ -1,7 +1,9 @@
 import React from 'react'
-import consola from 'consola'
 import Memoized from '../../layout/Memoized/Memoized'
 import useModal, { modalTypes } from '../../../lib/hooks/useModal'
+import { consoleBadge, consoleStyles } from '../../../lib/console'
+
+const con = consoleBadge('Modal', consoleStyles.white)
 
 const Modal = () => {
   const { modal: infoModal, modalTrigger: infoModalButton } = useModal({
@@ -13,7 +15,7 @@ const Modal = () => {
       </div>
     ),
     onClose: () => {
-      consola.log('closing info modal')
+      con.log('closing info modal')
     },
   })
 
@@ -27,16 +29,16 @@ const Modal = () => {
       </div>
     ),
     onClose: () => {
-      consola.log('closing confirm modal')
+      con.log('closing confirm modal')
     },
     onSubmit: () => {
-      consola.log('submitting confirm modal')
+      con.log('submitting confirm modal')
     },
   })
 
   const digest = () => {
-    consola.log('handle modal samples digest')
-    consola.log('modals', infoModal, confirmModal)
+    con.log('handle modal samples digest')
+    con.log('modals', infoModal, confirmModal)
   }
 
   return (
