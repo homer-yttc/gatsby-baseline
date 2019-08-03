@@ -22,9 +22,7 @@ const {
 // Check if we're on netlify, and if netlify is using the prod instance. If not, attempts to
 // fill in the netlify deploy URL for a given branch. Ultimately it uses the fallback URL in the
 // end.
-const SITE_URL = NETLIFY_ENV === 'production' ?
-  NETLIFY_SITE_URL :
-  (NETLIFY_DEPLOY_URL || fallBack)
+const SITE_URL = NETLIFY_ENV === 'production' ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL || fallBack
 
 module.exports = {
   SITE_URL,
