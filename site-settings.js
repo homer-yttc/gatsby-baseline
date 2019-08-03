@@ -2,15 +2,7 @@ const srcPath = `${process.cwd()}/src`
 const compPath = `${srcPath}/components`
 const libPath = `${srcPath}/lib`
 
-const fallBack = 'http://localhost:8000'
-const {
-  NODE_ENV,
-  URL: NETLIFY_SITE_URL = fallBack,
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env
-const isNetlifyProduction = NETLIFY_ENV === 'production'
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
+const { SITE_URL } = require('./gatsby/env')
 
 module.exports = {
   manifest: {
@@ -25,7 +17,7 @@ module.exports = {
     icon: 'src/assets/images/gatsby-icon.png', // This path is relative to the root of the site.}
   },
   siteMetadata: {
-    siteUrl: siteUrl || fallBack,
+    siteUrl: SITE_URL,
     title: 'Gatsby Default Starter',
     description:
       'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',

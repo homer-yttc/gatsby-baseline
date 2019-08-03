@@ -1,7 +1,6 @@
 const { siteMetadata } = require('./site-settings')
 const plugins = require('./gatsby/config')
-
-const { GHPAGES } = process.env
+const { GHPAGES } = require('./gatsby/env')
 
 // eslint-disable-next-line no-console
 console.log(`ENV: '${process.env.CONTEXT || process.env.NODE_ENV}' on ${siteMetadata.siteUrl}`)
