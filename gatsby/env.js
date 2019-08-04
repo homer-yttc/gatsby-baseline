@@ -4,9 +4,6 @@
  * @file
  */
 
-// Load current env/local .env files. Details on usage: https://github.com/kerimdzhanov/dotenv-flow#files-under-version-control
-require('dotenv-flow').config()
-
 // The default fallback URL for development.
 const fallBack = 'http://localhost:8000'
 

@@ -1,16 +1,26 @@
+/* eslint-disable no-console */
+
+// Load current env/local .env files. Details on usage: https://github.com/kerimdzhanov/dotenv-flow#files-under-version-control
+require('dotenv-flow').config()
+
+const { once } = require('lodash')
 const { siteMetadata } = require('./site-settings')
 const plugins = require('./gatsby/config')
-const { GHPAGES } = require('./gatsby/env')
+const ENVS = require('./gatsby/env')
 
-// eslint-disable-next-line no-console
-console.log(`ENV: '${process.env.CONTEXT || process.env.NODE_ENV}' on ${siteMetadata.siteUrl}`)
+once(() => {
+  console.log('=================================')
+  console.log(`ENV: ${ENVS.NODE_ENV}`)
+  console.log(`SITE: ${ENVS.SITE_URL}`)
+  console.log('=================================')
+})()
 
 const config = {
   siteMetadata,
   plugins,
 }
 
-if (GHPAGES === '1') {
+if (ENVS.GHPAGES === '1') {
   Object.assign(config, {
     pathPrefix: `/gatsby-baseline`,
   })
