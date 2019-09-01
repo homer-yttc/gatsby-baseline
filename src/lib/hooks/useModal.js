@@ -1,24 +1,13 @@
 import React, { useState } from 'react'
 import * as PropTypes from 'prop-types'
 import { isFunction } from 'lodash'
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  // DialogContentText,
-  DialogTitle,
-} from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { consoleBadge, consoleStyles } from '../console'
+import Modal, { modalTypes } from './Modal/Modal'
 
 const con = consoleBadge('Modal', consoleStyles.white)
 
-export const modalTypes = {
-  info: 'info',
-  confirm: 'confirm',
-}
-
-const useModal = ({ variant = modalTypes.info, title, content, onClose, onSubmit, button }) => {
+const useModal = ({ onClose, onSubmit, button, ...modalProps }) => {
   const [modal, setModal] = useState()
   const closeModal = () => {
     con.log('modal closing')
@@ -33,31 +22,7 @@ const useModal = ({ variant = modalTypes.info, title, content, onClose, onSubmit
   }
 
   const triggerModal = () => {
-    setModal(
-      // eslint-disable-next-line react/jsx-boolean-value
-      <Dialog open={true}>
-        <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
-        <DialogContent>{content}</DialogContent>
-        <DialogActions>
-          {variant === modalTypes.confirm && (
-            <>
-              <Button color="primary" onClick={submitModal}>
-                Yes, I agree
-              </Button>
-              <Button color="primary" onClick={closeModal} autoFocus>
-                CANCEL
-              </Button>
-            </>
-          )}
-
-          {variant === modalTypes.info && (
-            <Button color="primary" onClick={submitModal}>
-              OK
-            </Button>
-          )}
-        </DialogActions>
-      </Dialog>
-    )
+    setModal(<Modal {...modalProps} submitModal={submitModal} closeModal={closeModal} />)
   }
 
   const modalTrigger = <Button onClick={triggerModal}>{button}</Button>
@@ -75,3 +40,5 @@ useModal.propTypes = {
 }
 
 export default useModal
+
+export { modalTypes }

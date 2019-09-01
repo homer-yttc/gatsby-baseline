@@ -4,8 +4,8 @@ import { has } from 'lodash'
 import TransitionLink, { TransitionPortal } from 'gatsby-plugin-transition-link'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Location } from '@reach/router'
-import useWindow from '../../../lib/hooks/useWindow'
-import { test, verticalAnimation } from './animations'
+import useWindow from '../../lib/hooks/useWindow'
+import { fadeInText, verticalAnimation } from './animations'
 
 const TransitionLinks = () => {
   const win = useWindow()
@@ -54,7 +54,7 @@ const TransitionLinks = () => {
                 }}
                 entry={{
                   delay: 0.5,
-                  trigger: ({ entry, node }) => test(entry, node),
+                  trigger: ({ entry, node }) => fadeInText(entry, node),
                 }}
               >
                 Go to a page, that way{' '}

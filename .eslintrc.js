@@ -51,10 +51,19 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-closing-tag-location': ['warn'],
     'react/require-default-props': ['warn'],
+    'react/jsx-wrap-multilines': 0,
+    'react/jsx-props-no-spreading': [
+      'warn',
+      {
+        html: 'enforce',
+        custom: 'ignore',
+        exceptions: ['img'],
+      },
+    ],
+    'react/prop-types': ['warn', { ignore: ['children', 'props'] }],
     semi: ['error', 'never'],
     'spaced-comment': 0,
     strict: 0,
-    'react/jsx-wrap-multilines': 0,
     'object-curly-newline': [
       'error',
       {

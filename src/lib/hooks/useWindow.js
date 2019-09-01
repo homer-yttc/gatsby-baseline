@@ -1,15 +1,11 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState } from 'react'
 
 const useWindow = () => {
   const [win, setWin] = useState()
 
-  useLayoutEffect(() => {
-    try {
-      setWin(window)
-    } catch (e) {
-      // Ignore.
-    }
-  }, [])
+  if (!win && typeof window !== 'undefined') {
+    setWin(window)
+  }
 
   return win
 }

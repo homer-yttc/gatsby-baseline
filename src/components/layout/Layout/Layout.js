@@ -17,7 +17,7 @@ import SEO from '../../meta/SEO/SEO'
 import './reset.css'
 import './_layout.scss'
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children, pageTitle }) => {
   const { title } = useSiteMetadata()
 
   return (
@@ -34,14 +34,10 @@ const Layout = ({ pageTitle, children }) => {
   )
 }
 
-Layout.defaultProps = {
-  children: null,
-}
+Layout.defaultProps = {}
 
 Layout.propTypes = {
   pageTitle: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  children: PropTypes.any,
 }
 
 export default Layout

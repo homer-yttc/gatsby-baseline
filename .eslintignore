@@ -4,3 +4,5 @@ public
 scripts
 graphql
 .cache
+tests
+cypress

@@ -1,7 +1,7 @@
 import React from 'react'
-import Memoized from '../../layout/Memoized/Memoized'
-import useModal, { modalTypes } from '../../../lib/hooks/useModal'
-import { consoleBadge, consoleStyles } from '../../../lib/console'
+import Memoized from '../../components/layout/Memoized/Memoized'
+import useModal, { modalTypes } from '../../lib/hooks/useModal'
+import { consoleBadge, consoleStyles } from '../../lib/console'
 
 const con = consoleBadge('Modal', consoleStyles.white)
 

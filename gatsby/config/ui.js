@@ -3,7 +3,8 @@ const postcssExtend = require('postcss-extend')
 const postcssNesting = require('postcss-nesting')
 const postcssPxToRem = require('postcss-pxtorem')
 const postcssPresetEnv = require('postcss-preset-env')
-const cssnano = require('cssnano')
+const cssNano = require('cssnano')
+const { envs, NODE_ENV } = require('../env')
 const {
   srcPaths,
   manifest: { theme_color },
@@ -12,17 +13,6 @@ const {
 module.exports = [
   'gatsby-plugin-fastclick',
   'gatsby-plugin-transition-link',
-  {
-    resolve: 'gatsby-plugin-sass',
-    options: {
-      includePaths: [srcPaths.styles],
-      useResolveUrlLoader: {
-        options: {
-          sourceMap: process.env.NODE_ENV === 'development', //default is false
-        },
-      },
-    },
-  },
   {
     resolve: 'gatsby-plugin-postcss',
     options: {
@@ -42,8 +32,19 @@ module.exports = [
           unitPrecision: 4, // Round rem units to 4 digits
         }),
         postcssPresetEnv({ stage: 3 }),
-        cssnano(),
+        cssNano(),
       ],
+    },
+  },
+  {
+    resolve: 'gatsby-plugin-sass',
+    options: {
+      includePaths: [srcPaths.styles],
+      useResolveUrlLoader: {
+        options: {
+          sourceMap: NODE_ENV === envs.development, //default is false
+        },
+      },
     },
   },
   {
