@@ -1,4 +1,4 @@
-[![Greenkeeper badge](https://badges.greenkeeper.io/homer-yttc/gatsby-baseline.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/homer-yttc/gatsby-baseline.svg)](https://greenkeeper.io/) [![Netlify Status](https://api.netlify.com/api/v1/badges/d899edee-fd86-4d0e-8747-0273fef19cb2/deploy-status)](https://app.netlify.com/sites/gatsby-baseline/deploys)
 
 <p align="center">
   <a href="https://www.gatsbyjs.org">
