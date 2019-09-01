@@ -1,27 +1,25 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/homer-yttc/gatsby-baseline.svg)](https://greenkeeper.io/) [![Netlify Status](https://api.netlify.com/api/v1/badges/d899edee-fd86-4d0e-8747-0273fef19cb2/deploy-status)](https://app.netlify.com/sites/gatsby-baseline/deploys)
 
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Homer's Gatsby Starter 📍
+<h1>
+  <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="30" />  Homer's Gatsby Starter 📍
 </h1>
 
-An opinionated _kitchen sink_ Gatsby v2.x starter project.
+An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter project.
 
-## 🎯 Features
+##🎯 Features
 
 *UI*
 - [gatsby-plugin-fastclick](https://github.com/escaladesports/gatsby-plugin-fastclick) for better mobile click response with [Fastclick](https://github.com/ftlabs/fastclick)
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
-- [gatsby-plugin-sass](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass), 'cause SASS still rules
-- [gatsby-plugin-postcss](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss) for PostCSS support to clean up/unify built css
-- [gatsby-plugin-prefetch-google-fonts](https://github.com/escaladesports/gatsby-plugin-prefetch-google-fonts) for pre-fetching google fonts in builds 
 - [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
+
+*Code Essentials*
+- [lodash](https://github.com/lodash/lodash/) the holy grail of native JS tools
+- [momentjs](https://github.com/moment/moment/) you don't date without moment
 - [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for easy detection of when elements have been scrolled into view
-- [react-hook-form](https://react-hook-form.com/api) a modern take on handling forms with react hooks, coupled with the popular [yup](https://github.com/jquense/yup) schema validation library, for powerful, modular, and extensible form handling across your project 
+- [react-hook-form](https://react-hook-form.com/api) a modern take on handling forms with react hooks, coupled with the popular [yup](https://github.com/jquense/yup) schema validation library, for powerful, modular, and extensible form handling across your project
+- [react-async-hook](https://github.com/slorber/react-async-hook#readme) provides safe means of using async functions or API services without UI state getting left behind or updating needlessly
+- [@babel/plugin-proposal-optional-chaining](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) with ES optional chaining in Stage 3 approval (Aug 2019), finally worth to adopt this invaluable object retrieval
 
 *Accessibility*
 - [gatsby-plugin-accessibilityjs](https://github.com/alampros/gatsby-plugin-accessibilityjs) provides realtime highlighting of glaring accessibility errors during development. 
@@ -32,7 +30,6 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 *State*
 - `useAppContext` React Context for global data and UI state across Gatsby site inspired by [State Management with React Hooks and Context API in 10 lines of code!](https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c) and [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)
-- [react-async-hook](https://github.com/slorber/react-async-hook#readme) provides safe means of using async functions or API services without UI state getting left behind or updating needlessly
 - [PENDING] Schema JSONLD
 
 *Testing*
@@ -57,7 +54,9 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 - [gatsby-plugin-catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/) _Gatsby's official_ helper plugin, for detecting existing Gatsby routes found in `<a>` tags and converting them to `<Link>`s automatically
 - [gatsby-plugin-polyfill-io](https://github.com/escaladesports/gatsby-plugin-polyfill-io) optional polyfill for [supporting es6/next features](https://polyfill.io/v3/url-builder/) in s8it browsers 
 - [gatsby-plugin-webpack-bundle-analyzer](https://github.com/escaladesports/gatsby-plugin-webpack-bundle-analyzer) which is built on top of [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to keep an eye on your bundle size
-- [@babel/plugin-proposal-optional-chaining](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) with ES optional chaining in Stage 3 approval (Aug 2019), finally worth to adopt this invaluable object retrieval
+- [gatsby-plugin-sass](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass), 'cause SASS still rules
+- [gatsby-plugin-postcss](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss) for PostCSS support to clean up/unify built css
+- [workerize-loader](https://github.com/developit/workerize-loader) support for running web workers on demand or via async
 
 *Security*
 - [gatsby-plugin-recaptcha](https://github.com/escaladesports/gatsby-plugin-recaptcha) & [react-recaptcha](https://github.com/appleboy/react-recaptcha) for easy use of reCaptcha on site
@@ -66,6 +65,7 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 *Hosting*
 - From core: `gatsby-plugin-offline` (optionally enabled, not enforced)
 - [gatsby-plugin-netlify](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-netlify) for support in netlify builds
+- [gatsby-plugin-prefetch-google-fonts](https://github.com/escaladesports/gatsby-plugin-prefetch-google-fonts) for pre-fetching google fonts in builds 
 
 ## ⚰️ Failures and Lessons
 ### [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import)
