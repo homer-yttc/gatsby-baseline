@@ -20,7 +20,7 @@ const {
   GHPAGES_URL = '',
   URL: NETLIFY_SITE_URL = fallBack,
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV,
+  CONTEXT: NETLIFY_ENV,
 } = process.env
 
 // Check if we're on netlify, and if netlify is using the prod instance. If not, attempts to
@@ -38,4 +38,5 @@ module.exports = {
   NETLIFY_ENV,
   NETLIFY_DEPLOY_URL,
   GHPAGES,
+  GHPAGES_URL,
 }

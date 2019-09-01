@@ -8,6 +8,8 @@
     "audit:fix": "npm audit fix",
     "build": "gatsby build",
     "build:dev": "cross-env NODE_ENV=development gatsby build --no-uglify",
+    "clean": "rm -rf .cache && rm -rf public",
+    "clean:node": "rm -rf node_modules && npm i",
     "dev": "gatsby develop",
     "dev:ssl": "gatsby develop -https",
     "deploy:ghpages": "cross-env GHPAGES=1 gatsby build --prefix-paths && node ./scripts/deploy-ghpages.js",
@@ -87,11 +89,14 @@
     "postcss-pxtorem": "~4.0.1",
     "prop-types": "~15.7.2",
     "react": "~16.8.6",
+    "react-async-hook": "^3.4.0",
     "react-dom": "~16.8.6",
     "react-helmet": "6.0.0-beta",
+    "react-hook-form": "^3.23.0",
     "react-intersection-observer": "~8.24.1",
     "react-pose": "~4.0.8",
-    "react-recaptcha": "~2.3.10"
+    "react-recaptcha": "~2.3.10",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.6.3",
