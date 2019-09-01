@@ -10,7 +10,7 @@ module.exports = {
     short_name: 'starter',
     lang: 'en',
     description: 'A new gatsby site.',
-    start_url: SITE_URL,
+    start_url: '/',
     background_color: '#663399',
     theme_color: '#663399',
     display: 'minimal-ui',
