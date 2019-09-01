@@ -21,6 +21,7 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 - [gatsby-plugin-prefetch-google-fonts](https://github.com/escaladesports/gatsby-plugin-prefetch-google-fonts) for pre-fetching google fonts in builds 
 - [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
 - [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for easy detection of when elements have been scrolled into view
+- [react-hook-form](https://react-hook-form.com/api) a modern take on handling forms with react hooks, coupled with the popular [yup](https://github.com/jquense/yup) schema validation library, for powerful, modular, and extensible form handling across your project 
 
 *Accessibility*
 - [gatsby-plugin-accessibilityjs](https://github.com/alampros/gatsby-plugin-accessibilityjs) provides realtime highlighting of glaring accessibility errors during development. 
@@ -31,6 +32,7 @@ An opinionated _kitchen sink_ Gatsby v2.x starter project.
 
 *State*
 - `useAppContext` React Context for global data and UI state across Gatsby site inspired by [State Management with React Hooks and Context API in 10 lines of code!](https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c) and [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)
+- [react-async-hook](https://github.com/slorber/react-async-hook#readme) provides safe means of using async functions or API services without UI state getting left behind or updating needlessly
 - [PENDING] Schema JSONLD
 
 *Testing*
