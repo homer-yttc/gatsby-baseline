@@ -1,8 +1,13 @@
-module.exports = [
+const { NETLIFY_ENV } = require('../env')
+
+const hosting = [
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
   // 'gatsby-plugin-offline',
-  {
+]
+
+if (NETLIFY_ENV) {
+  hosting.push({
     resolve: 'gatsby-plugin-netlify',
     options: {
       // option to add more headers. 'Link' headers are transformed by the below criteria
@@ -21,5 +26,7 @@ module.exports = [
       // boolean to turn off automatic creation of redirect rules for client only paths
       // generateMatchPathRewrites: true,
     },
-  },
-]
+  })
+}
+
+module.exports = hosting

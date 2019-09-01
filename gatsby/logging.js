@@ -21,7 +21,7 @@ const logBuildPlugins = once(() => {
 
   plugins.forEach((plugin) => {
     if (isObject(plugin) && has(plugin, 'resolve')) {
-      pluginList.push(`${plugin.resolve} - {${keys(plugin.options).join(' ')}}`)
+      pluginList.push(`${plugin.resolve} {${keys(plugin.options).join(' ')}}`)
     } else {
       pluginList.push(plugin)
     }
