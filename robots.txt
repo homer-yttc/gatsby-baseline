@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://homer-yttc.github.io/sitemap.xml
-Host: https://homer-yttc.github.io
+Sitemap: http://localhost:8000/sitemap.xml
+Host: localhost:8000
