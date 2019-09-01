@@ -4,6 +4,7 @@ const postcssNesting = require('postcss-nesting')
 const postcssPxToRem = require('postcss-pxtorem')
 const postcssPresetEnv = require('postcss-preset-env')
 const cssNano = require('cssnano')
+const { envs, NODE_ENV } = require('../env')
 const {
   srcPaths,
   manifest: { theme_color },
@@ -41,7 +42,7 @@ module.exports = [
       includePaths: [srcPaths.styles],
       useResolveUrlLoader: {
         options: {
-          sourceMap: process.env.NODE_ENV === 'development', //default is false
+          sourceMap: NODE_ENV === envs.development, //default is false
         },
       },
     },

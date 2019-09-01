@@ -7,9 +7,15 @@
 // The default fallback URL for development.
 const fallBack = 'http://localhost:8000'
 
+const envs = {
+  development: 'development',
+  test: 'test',
+  production: 'production',
+}
+
 // Attempt to pull the required variables out of the process.env, with defaults filled in
 const {
-  NODE_ENV = 'development',
+  NODE_ENV = envs.development,
   GHPAGES = false,
   URL: NETLIFY_SITE_URL = fallBack,
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
@@ -22,6 +28,7 @@ const {
 const SITE_URL = NETLIFY_ENV === 'production' ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL || fallBack
 
 module.exports = {
+  envs,
   SITE_URL,
   NODE_ENV,
   NETLIFY_ENV,
