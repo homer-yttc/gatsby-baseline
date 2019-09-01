@@ -2,7 +2,18 @@
   "name": "@homer/gatsby-baseline",
   "description": "An opinionated Gatsby v2.x starter project.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Homer <homer@yourturntocode.com>",
+  "license": "MIT",
+  "keywords": [
+    "gatsby"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "engines": {
+    "node": ">=10.16.0"
+  },
   "scripts": {
     "audit": "npm audit",
     "audit:fix": "npm audit fix",
@@ -32,9 +43,6 @@
     "test:perf": "ava tests/performance/lighthouse.js --verbose",
     "start": "gatsby develop",
     "serve": "gatsby serve"
-  },
-  "engines": {
-    "node": ">=10.13.0"
   },
   "greenkeeper": {
     "ignore": [
@@ -100,11 +108,17 @@
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.6.3",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
     "@testing-library/cypress": "^4.0.5",
     "ava": "^2.2.0",
     "babel-eslint": "^10.0.2",
+    "babel-preset-gatsby": "0.2.8",
     "chrome-launcher": "^0.11.2",
-    "core-js": "^3.1.4",
     "cross-env": "^5.2.0",
     "cypress": "^3.4.1",
     "eslint": "^6.3.0",
@@ -127,10 +141,6 @@
     "stylelint-order": "^3.0.1",
     "stylelint-scss": "^3.9.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/homer-yttc/gatsby-baseline"

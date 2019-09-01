@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../layout/Layout/Layout'
-import KitchenSink from '../samples/KitchenSink/KitchenSink'
+import KitchenSink from '../../samples/KitchenSink/KitchenSink'
 
 const SecondPage = () => (
   <Layout pageTitle="Page two">

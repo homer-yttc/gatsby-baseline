@@ -20,7 +20,7 @@ export const verticalAnimation = (transitionCover, layoutContents, { length }, d
     })
 }
 
-export const test = (entry, node) =>
+export const fadeInText = (entry, node) =>
   // eslint-disable-next-line implicit-arrow-linebreak
   new TimelineMax().staggerFrom(
     node.querySelectorAll('h2, p, a, pre'),

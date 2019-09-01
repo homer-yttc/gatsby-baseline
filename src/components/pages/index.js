@@ -1,7 +1,7 @@
 import React from 'react'
 import Memoized from '../layout/Memoized/Memoized'
 import Layout from '../layout/Layout/Layout'
-import KitchenSink from '../samples/KitchenSink/KitchenSink'
+import KitchenSink from '../../samples/KitchenSink/KitchenSink'
 import { consoleBadge, consoleStyles } from '../../lib/console'
 
 const con = consoleBadge('Homepage', consoleStyles.green)
