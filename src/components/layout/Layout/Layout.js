@@ -12,7 +12,7 @@ import * as PropTypes from 'prop-types'
 import useSiteMetadata from '../../../lib/static/useSiteMetadata'
 // Deps
 import Header from '../Header/Header'
-import SEO from '../../meta/SEO/SEO'
+import { SEO } from '../../meta'
 // Assets
 import './reset.css'
 import './_layout.scss'
