@@ -17,9 +17,12 @@ module.exports = [
       mergeStyleHashes: true, // you can disable styles sha256 hashes
       mergeDefaultDirectives: true,
       directives: {
-        'script-src': "'self' www.google-analytics.com",
-        'style-src': "'self' 'unsafe-inline'",
-        'img-src': "'self' data: www.google-analytics.com",
+        'script-src':
+          "'self' 'unsafe-eval' 'unsafe-inline' data: www.google-analytics.com www.googletagmanager.com maps.googleapis.com",
+        'style-src': "'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com",
+        'img-src': "'self' data: www.google-analytics.com maps.gstatic.com maps.googleapis.com",
+        'font-src': "'self' www.google-analytics.com fonts.googleapis.com fonts.gstatic.com",
+        'frame-src': "'self'",
         // you can add your directives or override defaults
       },
     },

@@ -5,9 +5,7 @@ const postcssPxToRem = require('postcss-pxtorem')
 const postcssPresetEnv = require('postcss-preset-env')
 const cssNano = require('cssnano')
 const { envs, NODE_ENV } = require('../env')
-const {
-  srcPaths,
-} = require('../../site-settings')
+const { srcPaths } = require('../../site-settings')
 
 module.exports = [
   'gatsby-plugin-eslint',
