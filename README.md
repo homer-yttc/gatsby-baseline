@@ -8,7 +8,7 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 
 ## 🎯 Features
 
-*Code Essentials*
+**Code Essentials**
 - [lodash](https://github.com/lodash/lodash/) the holy grail of native JS tools
 - [momentjs](https://github.com/moment/moment/) because, you don't date without moment
 - [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for easy detection of when elements have been scrolled into view
@@ -17,15 +17,15 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 - [workerize-loader](https://github.com/developit/workerize-loader) support for running web workers on demand or via async
 - [@babel/plugin-proposal-optional-chaining](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) with ES optional chaining in Stage 3 approval (Aug 2019), finally worth to adopt this invaluable object retrieval
 
-*State*
+**State**
 - `useAppContext` React Context for global data and UI state across Gatsby site inspired by [State Management with React Hooks and Context API in 10 lines of code!](https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c) and [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)
 - [PENDING] Schema JSONLD
 
-*Testing*
+**Testing**
 - [PENDING] [lighthouse](https://developers.google.com/web/tools/lighthouse/) test with Google's Lighthouse
 - [PENDING] Cypress
 
-*Tooling/Build*
+**Tooling**
 - [lefthook](https://github.com/Arkweid/lefthook) for support in managing/implementing git hooks
 - [prettier](https://prettier.io/) for code style
 - [eslint](https://eslint.org) with [preset config](./.eslintrc.js) for fine tune control. Out of the box extends from: `airbnb`, `eslint:recommended`, `plugin:react/recommended`
@@ -60,7 +60,7 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 - [gatsby-plugin-recaptcha](https://github.com/escaladesports/gatsby-plugin-recaptcha) & [react-recaptcha](https://github.com/appleboy/react-recaptcha) for easy use of reCaptcha on site
 - [gatsby-plugin-csp](https://github.com/bejamas/gatsby-plugin-csp) easy Content Security Policy control to aid in preventing XSS or injection attacks. Reasonable defaults in place with Google exclusions for GA/GTM/Maps or Fonts (if you're not pre-fetching)
 
-**[Tooling/Build](./gatsby/config/tooling.js)**
+**[Tooling](./gatsby/config/tooling.js)**
 - [gatsby-plugin-eslint](https://github.com/mongkuen/gatsby-plugin-eslint) ensuring custom eslint applies as expected
 - [gatsby-plugin-catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/) _Gatsby's official_ helper plugin, for detecting existing Gatsby routes found in `<a>` tags and converting them to `<Link>`s automatically
 - [gatsby-plugin-polyfill-io](https://github.com/escaladesports/gatsby-plugin-polyfill-io) optional polyfill for [supporting es6/next features](https://polyfill.io/v3/url-builder/) if you don't prefer babel's 
@@ -72,6 +72,10 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 - [gatsby-plugin-fastclick](https://github.com/escaladesports/gatsby-plugin-fastclick) for better mobile click response with [Fastclick](https://github.com/ftlabs/fastclick)
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
 - [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
+
+## 🏗️ Gatsby Build
+- [env](./gatsby/env.js) a place to obtain and deal with ENV variables which might need to affect how you perform your builds
+- [logging](./gatsby/logging.js) some helper logging to let you confirm various ENV variables on build when working across different platform, and a list of which gatsby plugins are currently running
 
 ## 📃 Gatsby Nodes
 - [webWorkers](./gatsby/node/webWorkers.js), using `workerizer` will automatically turn `*.worker.js` files into callable functions from the site lib/components affecting gatsby's `onCreateWebpackConfig` to tie in the loader on build.
