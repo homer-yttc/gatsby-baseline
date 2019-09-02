@@ -6,7 +6,7 @@
 
 An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter project.
 
-##🎯 Features
+## 🎯 Features
 
 *Code Essentials*
 - [lodash](https://github.com/lodash/lodash/) the holy grail of native JS tools
@@ -31,7 +31,7 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 - [eslint](https://eslint.org) with [preset config](./.eslintrc.js) for fine tune control. Out of the box extends from: `airbnb`, `eslint:recommended`, `plugin:react/recommended`
 - `browserlist` within the [package.json](./package.json) allows Gatsby/babel to compile needed polyfills or css prefixing for desired browser support. [Officially supported by Gatsby](https://www.gatsbyjs.org/docs/browser-support/)
 
-##📋 Gatsby Config/Plugins
+## 📋 Gatsby Config/Plugins
 
 **[Accessibility](./gatsby/config/accessibility.js)**
 - [gatsby-plugin-accessibilityjs](https://github.com/alampros/gatsby-plugin-accessibilityjs) provides realtime highlighting of glaring accessibility errors during development. 
@@ -73,10 +73,10 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
 - [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
 
-##📃 Gatsby Nodes
+## 📃 Gatsby Nodes
 - [webWorkers](./gatsby/node/webWorkers.js), using `workerizer` will automatically turn `*.worker.js` files into callable functions from the site lib/components affecting gatsby's `onCreateWebpackConfig` to tie in the loader on build.
 
-##🖥️ Gatsby Browser
+## 🖥️ Gatsby Browser
 - [wrapRootElement](./gatsby/browser/wrapRootElement.js) will set the `useAppContext` across the root page element in gatsby, so that any component will have access to the global state as needed.
 
 # ⚰️ Failures and Lessons
