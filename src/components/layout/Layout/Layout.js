@@ -9,7 +9,7 @@
 import React from 'react'
 import * as PropTypes from 'prop-types'
 // State
-import useSiteMetadata from '../../../lib/static/useSiteMetadata'
+import { useSiteMetadata } from '../../../lib/static'
 // Deps
 import Header from '../Header/Header'
 import { SEO } from '../../meta'
@@ -22,8 +22,8 @@ const Layout = ({ children, pageTitle }) => {
 
   return (
     <>
-      <SEO title={pageTitle} />
-      <Header siteTitle={title} />
+      <SEO title={pageTitle}/>
+      <Header siteTitle={title}/>
       <div className="main-wrapper">
         <main>{children}</main>
         <footer>

@@ -11,11 +11,13 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 **Code Essentials**
 - [lodash](https://github.com/lodash/lodash/) the holy grail of native JS tools
 - [momentjs](https://github.com/moment/moment/) because, you don't date without moment
+- [workerize-loader](https://github.com/developit/workerize-loader) support for running web workers on demand or via async
+- [@babel/plugin-proposal-optional-chaining](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) with ES optional chaining in Stage 3 approval (Aug 2019), finally worthy to adopt this invaluable object retrieval (*Note:* doesn't run in build js, only on site js)
+
+**React Essentials**
 - [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for easy detection of when elements have been scrolled into view
 - [react-hook-form](https://react-hook-form.com/api) a modern take on handling forms with react hooks, coupled with the popular [yup](https://github.com/jquense/yup) schema validation library, for powerful, modular, and extensible form handling across your project
 - [react-async-hook](https://github.com/slorber/react-async-hook#readme) provides safe means of using async functions or API services without UI state getting left behind or updating needlessly
-- [workerize-loader](https://github.com/developit/workerize-loader) support for running web workers on demand or via async
-- [@babel/plugin-proposal-optional-chaining](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) with ES optional chaining in Stage 3 approval (Aug 2019), finally worth to adopt this invaluable object retrieval
 
 **State**
 - `useAppContext` React Context for global data and UI state across Gatsby site inspired by [State Management with React Hooks and Context API in 10 lines of code!](https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c) and [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)

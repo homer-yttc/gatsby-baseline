@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types'
 import { isFunction } from 'lodash'
 import { Button } from '@material-ui/core'
 import { consoleBadge, consoleStyles } from '../console'
-import Modal, { modalTypes } from './Modal/Modal'
+import Modal from './Modal/Modal'
 
 const con = consoleBadge('Modal', consoleStyles.white)
 
@@ -40,5 +40,3 @@ useModal.propTypes = {
 }
 
 export default useModal
-
-export { modalTypes }

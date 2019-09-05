@@ -1,7 +1,7 @@
 import React from 'react'
 import Memoized from '../../components/layout/Memoized/Memoized'
-import useModal, { modalTypes } from '../../lib/hooks/useModal'
-import { consoleBadge, consoleStyles } from '../../lib/console'
+import { useModal, modalTypes } from '../../lib/hooks'
+import { consoleBadge, consoleStyles } from '../../lib'
 
 const con = consoleBadge('Modal', consoleStyles.white)
 
@@ -46,13 +46,13 @@ const Modal = () => {
       <h2>Modal Samples</h2>
       {infoModalButton}
       {infoModal}
-      <br />
-      <br />
+      <br/>
+      <br/>
       {confirmModalButton}
       {confirmModal}
-      <br />
-      <br />
-      <hr />
+      <br/>
+      <br/>
+      <hr/>
     </Memoized>
   )
 }
