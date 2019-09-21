@@ -6,7 +6,53 @@
 
 An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter project.
 
+**Install Instructions**
+To get up and running easily, follow these steps:
+```shell script
+# clone the repo, to a custom folder
+git clone https://github.com/homer-yttc/gatsby-baseline.git my-gatsby-project 
+# install node modules
+cd my-gatsby-project
+npm i
+# test that the site builds and runs for you
+npm run dev
+```
+
+<hr/>
+
+# Deployments
+
+A variety of popular methods for deployment have been added to this project to give you the most flexibility in where you desire hosting your project. If needed, you can clean out non-used hosting aspects, but there is no harm if you leave them. Any gatsby-plugins related to specific hosting types are isolate to **only** run when those hosting ENVs are activated, to help keep your builds as clean as possible for your chosen path. Enjoy!
+
+## Github Pages
+
+## Google's Firebase
+
+## Netlify
+
+# 🏗️ Multi-sites & Environments
+
+Some fine point essentials required for working with Gatsby in the real world, where there of often never a 'single' version of the site in the wild. While at some I hope to externalize these into a gatsby theme include, at the moment they're too tangle and hand-on against project level build requirements.
+
+## [gatsby/env.js](./gatsby/env.js)
+Out of the box, one of Gatsby's lacking features is how to best handle working with deploying your project to different sites, which naturally also differ from hosting to hosting too! To help address some of these weak points, in combination with libraries like dotenv-flow (listed below in Features), these files aim to ease the burden or running builds across different sites/branches beyond a single hosting mentality. So when you have the need to spin up a hosted dev/stagin/prod site side by side on different branches, this is where the magic happens. 
+
+A dependable utility, [env](./gatsby/env.js), was created to obtain and deal with ENV variables which might need to affect how you perform your builds.
+
+## [gatsby/logging.js](./gatsby/logging.js)
+When leveraging multi-sites as well, detailed build logs of what ENVs are running (like the builds site URL), or just what plugins are actually running on a given site are also lacking in gatsby. 
+
+As such, [logging](./gatsby/logging.js) was created to provide helpers easily display various ENV variables on build when working across different platform, and a list of which gatsby plugins are currently running and what options are enabled (key name, not specifics)
+
+<hr/>
+
+# Project Breakdown
+
+A list of code features and build plugins which have been configured and crafted to get you up and running with ease and consistency.
+
 ## 🎯 Features
+
+The following is a list of all the key code level utilities and supporting libraries which you can leverage while developing your site.
 
 **Code Essentials**
 - [lodash](https://github.com/lodash/lodash/) the holy grail of native JS tools
@@ -25,15 +71,18 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 
 **Testing**
 - [PENDING] [lighthouse](https://developers.google.com/web/tools/lighthouse/) test with Google's Lighthouse
-- [PENDING] Cypress
+- Cypress
 
 **Tooling**
 - [lefthook](https://github.com/Arkweid/lefthook) for support in managing/implementing git hooks
 - [prettier](https://prettier.io/) for code style
 - [eslint](https://eslint.org) with [preset config](./.eslintrc.js) for fine tune control. Out of the box extends from: `airbnb`, `eslint:recommended`, `plugin:react/recommended`
 - `browserlist` within the [package.json](./package.json) allows Gatsby/babel to compile needed polyfills or css prefixing for desired browser support. [Officially supported by Gatsby](https://www.gatsbyjs.org/docs/browser-support/)
+- [dotenv-flow](https://github.com/kerimdzhanov/dotenv-flow) adds support for managing ENV variables with greater control, allowing necessary settings to pass between developers yet still allowing local (ignored) files to take precedence
 
 ## 📋 Gatsby Config/Plugins
+
+The following is a list of plugins supporting the gatsby build cycle to get the most out of your project.
 
 **[Accessibility](./gatsby/config/accessibility.js)**
 - [gatsby-plugin-accessibilityjs](https://github.com/alampros/gatsby-plugin-accessibilityjs) provides realtime highlighting of glaring accessibility errors during development. 
@@ -64,26 +113,24 @@ An opinionated _kitchen sink_ [Gatsby v2.x](https://www.gatsbyjs.org) starter pr
 
 **[Tooling](./gatsby/config/tooling.js)**
 - [gatsby-plugin-eslint](https://github.com/mongkuen/gatsby-plugin-eslint) ensuring custom eslint applies as expected
+- [gatsby-plugin-stylelint](@danbruegge/gatsby-plugin-stylelint) ensuring style is linted as you develop with gatsby
 - [gatsby-plugin-catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/) _Gatsby's official_ helper plugin, for detecting existing Gatsby routes found in `<a>` tags and converting them to `<Link>`s automatically
 - [gatsby-plugin-polyfill-io](https://github.com/escaladesports/gatsby-plugin-polyfill-io) optional polyfill for [supporting es6/next features](https://polyfill.io/v3/url-builder/) if you don't prefer babel's 
 - [gatsby-plugin-webpack-bundle-analyzer](https://github.com/escaladesports/gatsby-plugin-webpack-bundle-analyzer) which is built on top of [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to keep an eye on your bundle size
 - [gatsby-plugin-sass](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass), 'cause SASS still rules
-- [gatsby-plugin-postcss](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss) for PostCSS support to clean up/unify built css
 
 **[UI](./gatsby/config/ui.js)**
 - [gatsby-plugin-fastclick](https://github.com/escaladesports/gatsby-plugin-fastclick) for better mobile click response with [Fastclick](https://github.com/ftlabs/fastclick)
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
 - [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
 
-## 🏗️ Gatsby Build
-- [env](./gatsby/env.js) a place to obtain and deal with ENV variables which might need to affect how you perform your builds
-- [logging](./gatsby/logging.js) some helper logging to let you confirm various ENV variables on build when working across different platform, and a list of which gatsby plugins are currently running
-
 ## 📃 Gatsby Nodes
 - [webWorkers](./gatsby/node/webWorkers.js), using `workerizer` will automatically turn `*.worker.js` files into callable functions from the site lib/components affecting gatsby's `onCreateWebpackConfig` to tie in the loader on build.
 
 ## 🖥️ Gatsby Browser
 - [wrapRootElement](./gatsby/browser/wrapRootElement.js) will set the `useAppContext` across the root page element in gatsby, so that any component will have access to the global state as needed.
+
+<hr/>
 
 # ⚰️ Failures and Resolutions
 ## [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import)
