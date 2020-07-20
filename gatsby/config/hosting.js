@@ -1,5 +1,7 @@
 const { NETLIFY_ENV } = require('../env')
-const { monitoring: { gtmId } } = require('../../site-settings')
+const {
+  monitoring: { gtmId },
+} = require('../../site-settings')
 
 const hosting = [
   // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -49,12 +51,8 @@ if (NETLIFY_ENV) {
     options: {
       // option to add more headers. 'Link' headers are transformed by the below criteria
       headers: {
-        '/': [
-          'Basic-Auth: therefore:access',
-        ],
-        '/*': [
-          'Basic-Auth: therefore:access',
-        ],
+        '/': ['Basic-Auth: therefore:access'],
+        '/*': ['Basic-Auth: therefore:access'],
       },
       // option to add headers for all pages. 'Link' headers are transformed by the below criteria
       allPageHeaders: [],

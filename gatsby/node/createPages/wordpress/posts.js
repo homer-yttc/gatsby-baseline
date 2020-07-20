@@ -15,7 +15,7 @@ const transformPost = (edgeNode = {}) => {
           node[fieldName] = node[fieldName]
             .replace('\n', '')
             // eslint-disable-next-line no-useless-escape
-            .replace('\"', '"')
+            .replace('"', '"')
           break
       }
     })

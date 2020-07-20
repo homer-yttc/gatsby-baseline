@@ -22,12 +22,15 @@ export default function WpPosts({ pageContext: { data = {} } = {} }) {
 
   return (
     <>
-      <SEO title={data.title}/>
+      <SEO title={data.title} />
       <div className="wp-post" data-alias={data.slug}>
-        <Header/>
+        <Header />
         <div id="main" className="wp-post--wrapper">
           <section className="wp-post__hero">{}</section>
-          <article className="wp-post__content" dangerouslySetInnerHTML={{ __html: data.content }}/>
+          <article
+            className="wp-post__content"
+            dangerouslySetInnerHTML={{ __html: data.content }}
+          />
         </div>
         {/*<FooterCta />*/}
         {/*<Footer />*/}

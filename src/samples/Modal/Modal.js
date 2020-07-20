@@ -46,13 +46,13 @@ const Modal = () => {
       <h2>Modal Samples</h2>
       {infoModalButton}
       {infoModal}
-      <br/>
-      <br/>
+      <br />
+      <br />
       {confirmModalButton}
       {confirmModal}
-      <br/>
-      <br/>
-      <hr/>
+      <br />
+      <br />
+      <hr />
     </Memoized>
   )
 }

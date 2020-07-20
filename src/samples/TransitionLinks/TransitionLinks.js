@@ -23,17 +23,17 @@ const TransitionLinks = () => {
         <div>
           <h2>Transition Links</h2>
           {pathname && <span>Path: {pathname}</span>}
-          <br/>
+          <br />
           {targetUrl && <span>Target: {targetUrl}</span>}
-          <br/>
+          <br />
           <AniLink cover to={targetUrl} direction="right">
             Go to a page, with a cover right
           </AniLink>
-          <br/>
+          <br />
           <AniLink paintDrip to={targetUrl} hex="#4b2571">
             Go to a page, with a paint drip
           </AniLink>
-          <br/>
+          <br />
           <TransitionLink
             to={targetUrl}
             exit={{
@@ -53,7 +53,7 @@ const TransitionLinks = () => {
             </span>{' '}
             and animate in the next page
           </TransitionLink>
-          <br/>
+          <br />
           <TransitionLink
             to={targetUrl}
             exit={{
@@ -72,10 +72,10 @@ const TransitionLinks = () => {
             </span>
             and give us a dark theme when we get there.
           </TransitionLink>
-          <br/>
+          <br />
         </div>
       </section>
-      <TransitionPortal getTransitionCover={getTransitionCover}/>
+      <TransitionPortal getTransitionCover={getTransitionCover} />
     </>
   )
 }

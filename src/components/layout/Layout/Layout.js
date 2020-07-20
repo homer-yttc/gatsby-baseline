@@ -22,8 +22,8 @@ const Layout = ({ children, pageTitle }) => {
 
   return (
     <>
-      <SEO title={pageTitle}/>
-      <Header siteTitle={title}/>
+      <SEO title={pageTitle} />
+      <Header siteTitle={title} />
       <div className="main-wrapper">
         <main>{children}</main>
         <footer>

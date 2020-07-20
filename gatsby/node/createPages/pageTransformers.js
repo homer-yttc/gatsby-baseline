@@ -3,15 +3,15 @@ const { transformPost } = require('./wordpress')
 
 const PAGE_TRANSFORMER_TYPE = {
   drupalNode: 'drupalNode',
-  wpPost: 'wpPost'
+  wpPost: 'wpPost',
 }
 
 const PAGE_TRANSFORMER = {
   drupalNode: transformNode,
-  wpPost: transformPost
+  wpPost: transformPost,
 }
 
 module.exports = {
   PAGE_TRANSFORMER_TYPE,
-  PAGE_TRANSFORMER
+  PAGE_TRANSFORMER,
 }

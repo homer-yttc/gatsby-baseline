@@ -28,26 +28,25 @@ const createPages = ({ graphql, actions, reporter }) => {
   const pageLoaders = []
 
   pageType.forEach(({ query: { query, source, type, transformerType }, component }) => {
-    const loader = graphql(query, { limit: 1000 })
-      .then(({ data = {}, errors }) => {
-        const pages = []
-        if (errors) {
-          throw errors
+    const loader = graphql(query, { limit: 1000 }).then(({ data = {}, errors }) => {
+      const pages = []
+      if (errors) {
+        throw errors
+      }
+      // Create blog post pages.
+      const { edges = [] } = data[source] || {}
+      edges.forEach((edge) => {
+        const page = processNode(edge, component, transformerType)
+
+        // If a page is to be created (wasn't meant to be hidden, or errored), create it now.
+        if (page) {
+          pages.push(page)
+          createPage(page)
         }
-        // Create blog post pages.
-        const { edges = [] } = data[source] || {}
-        edges.forEach((edge) => {
-          const page = processNode(edge, component, transformerType)
-
-          // If a page is to be created (wasn't meant to be hidden, or errored), create it now.
-          if (page) {
-            pages.push(page)
-            createPage(page)
-          }
-        })
-
-        reporter.success(`|> ${compact(pages).length} ${type} GENERATED.`)
       })
+
+      reporter.success(`|> ${compact(pages).length} ${type} GENERATED.`)
+    })
 
     reporter.info(`|> ${type} QUEUED.`)
     pageLoaders.push(loader)

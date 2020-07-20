@@ -3,5 +3,5 @@
 module.exports = {
   onCreateWebpackConfig: require('./onCreateWebpackConfig'),
   createPages: require('./createPages'),
-  createSchemaCustomization: require('./createSchemaCustomization')
+  createSchemaCustomization: require('./createSchemaCustomization'),
 }
