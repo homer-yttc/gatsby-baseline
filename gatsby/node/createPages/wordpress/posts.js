@@ -2,17 +2,27 @@
 const { isObject, forEach } = require('lodash')
 const transformField = require('../common/field')
 
-const transformNode = (edgeNode = {}) => {
+const transformPost = (edgeNode = {}) => {
   const node = {}
 
   if (isObject(edgeNode)) {
     forEach(edgeNode, (content, fieldName) => {
       // console.log('edgeNode', fieldName, content)
       transformField(node, content, fieldName)
+
+      switch (fieldName) {
+        case 'content':
+          node[fieldName] = node[fieldName]
+            .replace('\n', '')
+            // eslint-disable-next-line no-useless-escape
+            .replace('\"', '"')
+          break
+      }
     })
   }
 
-  // console.log('transformNode', node)
+  console.log('transformPost', node.slug)
+
   /*if (node.node && node.node.content) {
     // console.log('transformNode:content', node.node.content)
 
@@ -35,4 +45,4 @@ const transformNode = (edgeNode = {}) => {
   return node
 }
 
-module.exports = transformNode
+module.exports = transformPost

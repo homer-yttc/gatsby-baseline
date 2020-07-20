@@ -30,8 +30,11 @@ module.exports = {
     lib: libPath,
     '@hooks': `${libPath}/hooks`,
     '@layout': `${compPath}/layout`,
-    '@pages': `${compPath}/pages`,
+    '@pages': `${srcPath}/pages`,
     '@meta': `${compPath}/meta`,
     '@media': `${compPath}/media`,
+  },
+  monitoring: {
+    gtmId: '',
   },
 }

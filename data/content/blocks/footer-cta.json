@@ -1,0 +1,24 @@
+{
+  "id": "block_footer_cta",
+  "node": {
+    "field_title": "Footer CTA",
+    "field_content": [
+      {
+        "field_type": "p_global",
+        "field_content": [
+          {
+            "field_type": "p_footer_cta",
+            "field_title": "Let’s build something great together.",
+            "field_description": "",
+            "field_link": {
+              "label": "Get In Touch",
+              "uri": "/contact-us"
+            },
+            "field_cta_image": "../images/footer/rocket.png",
+            "field_theme": "orange"
+          }
+        ]
+      }
+    ]
+  }
+}

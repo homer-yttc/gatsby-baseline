@@ -1,8 +1,8 @@
 import React from 'react'
-import { consoleBadge, consoleStyles } from '../../lib/console'
-import { Layout, Memoized } from '../layout'
-import { KitchenSink } from '../../samples'
-import { Image } from '../media'
+import { consoleBadge, consoleStyles } from '../lib'
+import { Layout, Memoized } from '../components/layout'
+// import { KitchenSink } from '../samples'
+import { Image } from '../components/media'
 
 const con = consoleBadge('Homepage', consoleStyles.green)
 
@@ -15,7 +15,7 @@ const Homepage = () => {
     <Memoized deps={[]} digest={digest}>
       <Layout pageTitle="Home">
         <h1>Home</h1>
-        <KitchenSink />
+        {/*<KitchenSink />*/}
         <Image />
       </Layout>
     </Memoized>

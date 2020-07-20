@@ -1,5 +1,5 @@
 const { trimEnd } = require('lodash')
-const { CWD, DRUPAL_CONTENT_API, GRAPHQL_CONTENT_API } = require('../env')
+const { CWD, DRUPAL_CONTENT_API, GRAPHQL_CONTENT_API, WORDPRESS_CONTENT_API } = require('../env')
 
 const dataSources = [
   {
@@ -42,6 +42,19 @@ if (DRUPAL_CONTENT_API) {
       //   username: process.env.BASIC_AUTH_USERNAME,
       //   password: process.env.BASIC_AUTH_PASSWORD,
       // },
+    },
+  })
+}
+
+if (WORDPRESS_CONTENT_API) {
+  dataSources.push({
+    resolve: `gatsby-source-wordpress-experimental`,
+    options: {
+      /*
+       * The full URL of the WordPress site's GraphQL API.
+       * Example : 'https://www.example-site.com/graphql'
+       */
+      url: WORDPRESS_CONTENT_API,
     },
   })
 }

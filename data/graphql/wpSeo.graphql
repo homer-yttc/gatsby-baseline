@@ -1,0 +1,91 @@
+query wpSeo {
+    wp {
+        seo {
+            webmaster {
+                googleVerify
+                yandexVerify
+                msVerify
+                baiduVerify
+            }
+            schema {
+                siteName
+                wordpressSiteName
+                siteUrl
+                companyName
+                companyOrPerson
+                companyLogo {
+                    mediaItemUrl
+                }
+                logo {
+                    mediaItemUrl
+                }
+                personLogo {
+                    mediaItemUrl
+                }
+            }
+            breadcrumbs {
+                showBlogPage
+                separator
+                searchPrefix
+                prefix
+                homeText
+                enabled
+                boldLast
+                archivePrefix
+                notFoundText
+            }
+            social {
+                facebook {
+                    url
+                    defaultImage {
+                        mediaItemUrl
+                    }
+                }
+                instagram {
+                    url
+                }
+                linkedIn {
+                    url
+                }
+                mySpace {
+                    url
+                }
+                pinterest {
+                    url
+                    metaTag
+                }
+                twitter {
+                    username
+                }
+                wikipedia {
+                    url
+                }
+                youTube {
+                    url
+                }
+            }
+            openGraph {
+                frontPage {
+                    title
+                    description
+                    image {
+                        altText
+                        sourceUrl
+                        mediaItemUrl
+                    }
+                }
+                defaultImage {
+                    altText
+                    sourceUrl
+                    mediaItemUrl
+                }
+            }
+            redirects {
+                origin
+                target
+                format
+                type
+            }
+        }
+    }
+}

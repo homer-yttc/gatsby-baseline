@@ -1,0 +1,129 @@
+query allWpPost {
+    allWpPost(sort: {fields: [date]}, filter: {status: {eq: "publish"}, title: {regex: "/.*(105).*/"}}) {
+        pageInfo {
+            totalCount
+            itemCount
+        }
+        edges {
+            node {
+                id
+                title
+                slug
+                excerpt
+                date(formatString: "MMMM DD, YYYY")
+                content
+                categories {
+                    nodes {
+                        slug
+                        name
+                        seo {
+                            canonical
+                            title
+                            metaDesc
+                            focuskw
+                            metaRobotsNoindex
+                            metaRobotsNofollow
+                            opengraphAuthor
+                            opengraphDescription
+                            opengraphTitle
+                            opengraphDescription
+                            opengraphImage {
+                                altText
+                                sourceUrl
+                                srcSet
+                            }
+                            twitterTitle
+                            twitterDescription
+                            twitterImage {
+                                altText
+                                sourceUrl
+                                srcSet
+                            }
+                            breadcrumbs {
+                                url
+                                text
+                            }
+                        }
+                    }
+                }
+                author {
+                    node {
+                        slug
+                        name
+                        description
+                        avatar {
+                            url
+                        }
+                        seo {
+                            metaDesc
+                            metaRobotsNofollow
+                            metaRobotsNoindex
+                            title
+                            social {
+                                youTube
+                                wikipedia
+                                twitter
+                                soundCloud
+                                pinterest
+                                mySpace
+                                linkedIn
+                                instagram
+                                facebook
+                            }
+                        }
+                    }
+                }
+                featuredImage {
+                    node {
+                        localFile {
+                            childImageSharp {
+                                fluid {
+                                    srcWebp
+                                    srcSetWebp
+                                    srcSet
+                                    src
+                                    sizes
+                                    presentationHeight
+                                    presentationWidth
+                                    aspectRatio
+                                }
+                            }
+                        }
+                    }
+                }
+                seo {
+                    canonical
+                    title
+                    metaDesc
+                    focuskw
+                    metaRobotsNoindex
+                    metaRobotsNofollow
+                    opengraphAuthor
+                    opengraphDescription
+                    opengraphTitle
+                    opengraphDescription
+                    opengraphImage {
+                        altText
+                        sourceUrl
+                        srcSet
+                    }
+                    opengraphUrl
+                    opengraphSiteName
+                    opengraphPublishedTime
+                    opengraphModifiedTime
+                    twitterTitle
+                    twitterDescription
+                    twitterImage {
+                        altText
+                        sourceUrl
+                        srcSet
+                    }
+                    breadcrumbs {
+                        url
+                        text
+                    }
+                }
+            }
+        }
+    }
+}

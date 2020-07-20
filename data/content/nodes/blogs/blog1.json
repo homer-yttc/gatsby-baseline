@@ -1,0 +1,20 @@
+{
+  "alias": "/blog/how-to",
+  "field_title": "How To",
+  "field_p_hero": [
+    {
+      "field_type": "p_hero_image_after",
+      "field_title": "Making digital work for people",
+      "field_summary": "Omni-channel, end-to-end solutions that meet your users’ needs and grow your business",
+      "field_image": "../../images/homepage/ic-logo.png",
+      "field_image_mobile": "../../images/homepage/ic-logo.png"
+    }
+  ],
+  "field_p_content": [
+    {
+      "field_type": "p_icon_feature",
+      "field_title": "Making digital work for people",
+      "field_icon": "../../images/homepage/ic-logo.png"
+    }
+  ]
+}

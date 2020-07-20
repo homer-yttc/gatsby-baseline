@@ -1,0 +1,17 @@
+{
+  "alias": "/404",
+  "node": {
+    "field_title": "404",
+    "field_p_hero": [
+      {
+        "field_type": "p_hero_image_after",
+        "field_title": "404: Page Not Found",
+        "field_summary": "THere was an error loading the requested page, please.",
+        "field_image": "../../images/homepage/ic-logo.png",
+        "field_image_mobile": "../../images/homepage/ic-logo.png"
+      }
+    ],
+    "field_p_content": [
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "header": {
+    "brand": {
+      "logo": ""
+    },
+    "topMenu": [
+      {
+        "key": "about",
+        "title": "About",
+        "link": "/about"
+      },
+      {
+        "key": "solutions",
+        "title": "Solutions",
+        "link": "/solutions"
+      },
+      {
+        "key": "case-studies",
+        "title": "Work",
+        "link": "/work"
+      },
+      {
+        "key": "contact",
+        "title": "Contact Us",
+        "link": "/contact-us"
+      },
+      {
+        "key": "blog",
+        "title": "Blog",
+        "link": "/blog"
+      }
+    ]
+  },
+  "footer": {
+    "featuredCopy": "Do you have a business challenge that we can help solve? We’re here to talk.",
+    "socials": [
+      {
+        "key": "facebook",
+        "title": "facebook",
+        "link": "https://www.facebook.com/thereforeinteractive",
+        "icon": "../images/footer/socials/facebook.svg"
+      },
+      {
+        "key": "linkedin",
+        "title": "linkedin",
+        "link": "https://www.linkedin.com/company/therefore-interactive",
+        "icon": "../images/footer/socials/linkedin.svg"
+      },
+      {
+        "key": "twitter",
+        "title": "twitter",
+        "link": "https://twitter.com/thereforeca",
+        "icon": "../images/footer/socials/twitter.svg"
+      },
+      {
+        "key": "instagram",
+        "title": "instagram",
+        "link": "https://instagram.com/thereforeca",
+        "icon": "../images/footer/socials/instagram.svg"
+      }
+    ],
+    "secondaryMenu": [
+      {
+        "key": "Privacy",
+        "title": "Privacy",
+        "link": "/blog"
+      },
+      {
+        "key": "Terms of use",
+        "title": "Terms of use",
+        "link": "/blog"
+      },
+      {
+        "key": "Accessibility",
+        "title": "Accessibility",
+        "link": "/blog"
+      }
+    ],
+    "copyright": "Therefore Interactive"
+  }
+}

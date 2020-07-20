@@ -8,4 +8,4 @@
 
 const { wrapRootElement } = require('./gatsby/browser')
 
-exports.wrapRootElement = wrapRootElement
+// exports.wrapRootElement = wrapRootElement

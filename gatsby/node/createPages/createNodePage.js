@@ -1,13 +1,13 @@
 const { isObject } = require('lodash')
-const { transformNode } = require('./drupal')
+const { PAGE_TRANSFORMER_TYPE, PAGE_TRANSFORMER } = require('./pageTransformers')
 
-const createNodePage = (edge, component) => {
+const createNodePage = (edge, component, transformerType = PAGE_TRANSFORMER_TYPE.drupalNode) => {
   // Only accept valid stores
   if (!edge || !isObject(edge.node) || !edge.node.id) {
     return null
   }
 
-  const node = transformNode(edge.node)
+  const node = PAGE_TRANSFORMER[transformerType](edge.node)
 
   // Hide store pages that should be hidden.
   if (node.hidden === true) {
@@ -18,7 +18,7 @@ const createNodePage = (edge, component) => {
 
   return {
     // Path for this page — required
-    path: node.alias,
+    path: node.alias || node.slug,
     component,
     context: {
       data: node,
