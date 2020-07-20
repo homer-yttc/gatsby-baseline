@@ -3,7 +3,8 @@
  * @param replaceWebpackConfig
  * @param getConfig
  */
-const loadWebWorkers = (replaceWebpackConfig, getConfig) => {
+
+const onCreateWebpackConfig = ({ actions: { replaceWebpackConfig }, getConfig }) => {
   const config = getConfig()
 
   config.module.rules.push({
@@ -16,6 +17,4 @@ const loadWebWorkers = (replaceWebpackConfig, getConfig) => {
   replaceWebpackConfig(config)
 }
 
-module.exports = {
-  loadWebWorkers,
-}
+module.exports = onCreateWebpackConfig

@@ -4,9 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const { loadWebWorkers } = require('./gatsby/node')
+const { createPages, onCreateWebpackConfig, createSchemaCustomization } = require('./gatsby/node')
 
-exports.onCreateWebpackConfig = ({ actions: { replaceWebpackConfig }, getConfig }) => {
-  // Loads .worker files to serve as web workers on demand or via async.
-  loadWebWorkers(replaceWebpackConfig, getConfig)
-}
+exports.createPages = createPages
+exports.onCreateWebpackConfig = onCreateWebpackConfig
+exports.createSchemaCustomization = createSchemaCustomization

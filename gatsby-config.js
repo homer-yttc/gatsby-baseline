@@ -15,7 +15,7 @@ const config = {
 
 if (ENVS.GHPAGES === '1') {
   Object.assign(config, {
-    pathPrefix: `/gatsby-baseline`,
+    pathPrefix: '/gatsby-baseline',
   })
 }
 

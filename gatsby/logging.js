@@ -8,10 +8,10 @@ const logBuildEnvs = once(() => {
   console.log(`ENV: ${ENVS.NODE_ENV}`)
   console.log(`SITE: ${ENVS.SITE_URL}`)
   if (ENVS.NETLIFY_ENV) {
-    console.log(`DEPLOYING @ Netlify`)
+    console.log('DEPLOYING @ Netlify')
   }
   if (ENVS.GHPAGES) {
-    console.log(`DEPLOYING @ Github Pages`)
+    console.log('DEPLOYING @ Github Pages')
   }
   console.log('=================================')
 })

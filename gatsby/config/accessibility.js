@@ -1,7 +1,9 @@
+const { NODE_ENV } = require('../env')
+
 const plugins = []
 
 // Only execute during development.
-if (process.env === 'development') {
+if (NODE_ENV === 'development') {
   plugins.push({
     resolve: 'gatsby-plugin-accessibilityjs',
     options: {

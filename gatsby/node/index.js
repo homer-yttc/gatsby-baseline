@@ -1,5 +1,7 @@
-const webWorkers = require('./webWorkers')
+/* eslint-disable global-require */
 
 module.exports = {
-  ...webWorkers,
+  onCreateWebpackConfig: require('./onCreateWebpackConfig'),
+  createPages: require('./createPages'),
+  createSchemaCustomization: require('./createSchemaCustomization')
 }

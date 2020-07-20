@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   parser: 'babel-eslint',
   extends: ['airbnb', 'eslint:recommended', 'plugin:react/recommended'],
-  plugins: ['graphql'],
+  plugins: ['graphql', 'react-hooks'],
   env: {
     browser: true,
     node: true,
@@ -33,6 +33,8 @@ module.exports = {
     ],
     'no-trailing-spaces': ['warn'],
     'no-console': ['error'],
+    'no-multi-assign': 0,
+    'no-plusplus': 0,
     'no-unused-vars': [
       'warn',
       {
@@ -45,8 +47,12 @@ module.exports = {
     'operator-linebreak': [2, 'after'],
     'object-curly-spacing': ['warn'],
     quotes: ['warn', 'single'],
+    'react/no-danger': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-indent': ['warn'],
     'react/jsx-filename-extension': 0,
+    'react/jsx-curly-newline': 0,
     'react/jsx-tag-spacing': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-closing-tag-location': ['warn'],
@@ -57,7 +63,7 @@ module.exports = {
       {
         html: 'enforce',
         custom: 'ignore',
-        exceptions: ['img'],
+        exceptions: ['img', 'a'],
       },
     ],
     'react/prop-types': ['warn', { ignore: ['children', 'props'] }],
@@ -71,13 +77,13 @@ module.exports = {
         consistent: true,
       },
     ],
-    'graphql/template-strings': [
-      'error',
-      {
-        env: 'relay',
-        schemaJsonFilepath: path.resolve(__dirname, 'graphql/schema.json'),
-        tagName: 'graphql',
-      },
-    ],
+    // 'graphql/template-strings': [
+    //   'error',
+    //   {
+    //     env: 'relay',
+    //     schemaJsonFilepath: path.resolve(__dirname, 'graphql/schema.json'),
+    //     tagName: 'graphql',
+    //   },
+    // ],
   },
 }

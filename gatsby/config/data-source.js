@@ -1,27 +1,67 @@
-module.exports = [
+const { trimEnd } = require('lodash')
+const { CWD, DRUPAL_CONTENT_API, GRAPHQL_CONTENT_API } = require('../env')
+
+const dataSources = [
   {
     resolve: 'gatsby-plugin-webpack-bundle-analyzer',
     options: {
       openAnalyzer: false,
     },
   },
+  'gatsby-transformer-json',
   {
-    resolve: 'gatsby-plugin-page-creator',
+    resolve: 'gatsby-source-filesystem',
     options: {
-      path: `${process.cwd()}/src/components/pages`,
+      name: 'data',
+      path: `${CWD}/data/content`,
     },
   },
   {
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'images',
-      path: `${process.cwd()}/src/assets/images`,
+      path: `${CWD}/data/content/images`,
     },
   },
   {
-    resolve: 'gatsby-plugin-extract-schema',
+    resolve: 'gatsby-source-filesystem',
     options: {
-      dest: `${process.cwd()}/graphql/schema.json`,
+      name: 'images',
+      path: `${CWD}/src/assets/images`,
     },
   },
 ]
+
+if (DRUPAL_CONTENT_API) {
+  dataSources.push({
+    resolve: 'gatsby-source-drupal',
+    options: {
+      baseUrl: trimEnd(DRUPAL_CONTENT_API, '/'),
+      apiBase: 'jsonapi', // optional, defaults to `jsonapi`
+      // basicAuth: {
+      //   username: process.env.BASIC_AUTH_USERNAME,
+      //   password: process.env.BASIC_AUTH_PASSWORD,
+      // },
+    },
+  })
+}
+
+if (GRAPHQL_CONTENT_API) {
+  dataSources.push({
+    resolve: 'gatsby-source-graphql',
+    options: {
+      typeName: 'GraphApi',
+      fieldName: 'graphapi',
+      url: GRAPHQL_CONTENT_API,
+      // A `fetch`-compatible API to use when making requests.
+      fetch: (uri, options = {}) =>
+        // Chance to sign the headers as needed
+        fetch(uri, {
+          ...options,
+          headers: options.headers,
+        }),
+    },
+  })
+}
+
+module.exports = dataSources

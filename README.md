@@ -35,7 +35,7 @@ A variety of popular methods for deployment have been added to this project to g
 Some fine point essentials required for working with Gatsby in the real world, where there of often never a 'single' version of the site in the wild. While at some I hope to externalize these into a gatsby theme include, at the moment they're too tangle and hand-on against project level build requirements.
 
 ## [gatsby/env.js](./gatsby/env.js)
-Out of the box, one of Gatsby's lacking features is how to best handle working with deploying your project to different sites, which naturally also differ from hosting to hosting too! To help address some of these weak points, in combination with libraries like dotenv-flow (listed below in Features), these files aim to ease the burden or running builds across different sites/branches beyond a single hosting mentality. So when you have the need to spin up a hosted dev/stagin/prod site side by side on different branches, this is where the magic happens. 
+Out of the box, one of Gatsby's lacking features is how to best handle working in different deploy situations. To help address some of these weak points, in combination with libraries like dotenv-flow (listed below in Features), these files aim to ease the burden or running builds across different sites/branches beyond a single hosting mentality. So when you have the need to spin up a hosted dev/stagin/prod site side by side on different branches, this is where the magic happens. 
 
 A dependable utility, [env](./gatsby/env.js), was created to obtain and deal with ENV variables which might need to affect how you perform your builds.
 
@@ -70,8 +70,7 @@ The following is a list of all the key code level utilities and supporting libra
 - [PENDING] Schema JSONLD
 
 **Testing**
-- [PENDING] [lighthouse](https://developers.google.com/web/tools/lighthouse/) test with Google's Lighthouse
-- Cypress
+- [Cypress](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell) straightforward UI testing controls 
 
 **Tooling**
 - [lefthook](https://github.com/Arkweid/lefthook) for support in managing/implementing git hooks
@@ -82,8 +81,6 @@ The following is a list of all the key code level utilities and supporting libra
 
 ## 📋 Gatsby Config/Plugins
 
-The following is a list of plugins supporting the gatsby build cycle to get the most out of your project.
-
 **[Accessibility](./gatsby/config/accessibility.js)**
 - [gatsby-plugin-accessibilityjs](https://github.com/alampros/gatsby-plugin-accessibilityjs) provides realtime highlighting of glaring accessibility errors during development. 
 
@@ -91,11 +88,14 @@ The following is a list of plugins supporting the gatsby build cycle to get the 
 - From core: `gatsby-source-filesystem`
 - [gatsby-plugin-page-creator](https://www.gatsbyjs.org/packages/gatsby-plugin-page-creator/) _Gatsby's official_ helper plugin, for moving `pages` to a more meaningful place 
 - [gatsby-plugin-extract-schema](https://github.com/NickyMeuleman/gatsby-plugin-extract-schema) automatically extract Gatsby's graphql schemas, and process them against the eslint'ing, to ensure devs are not going out of bounds
+- [gatsby-transformer-json](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-json) for static served content or UI labelling, from prescribed JSON data files to server as GraphQL for a more palatable component data model
+- [gatsby-source-graphql](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql) (optionally enabled) for GraphQL data sourcing.
 
 **[Hosting](./gatsby/config/hosting.js)**
 - From core: `gatsby-plugin-offline` (optionally enabled, not enforced)
 - [gatsby-plugin-netlify](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-netlify) for support in netlify builds. _Note:_ Will only enable if actually deploying on netlify
 - [gatsby-plugin-prefetch-google-fonts](https://github.com/escaladesports/gatsby-plugin-prefetch-google-fonts) for pre-fetching google fonts in builds to use on site, as needed 
+- [gatsby-plugin-google-tagmanager][https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-tagmanager] for Analtic and site monitoring.
 
 **[Media](./gatsby/config/media.js)**
 - From core: `gatsby-transformer-sharp`,`gatsby-plugin-sharp`,`gatsby-image`
@@ -124,23 +124,19 @@ The following is a list of plugins supporting the gatsby build cycle to get the 
 - [gatsby-plugin-transition-link](https://github.com/TylerBarnes/gatsby-plugin-transition-link) Page Transitions
 - [gatsby-plugin-nprogress](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) _Gatsby's official_ subtle & sexy page loader, appears only when page loads are longer than 1s
 
+## 🏗️ Gatsby Build
+- [env](./gatsby/env.js) a place to obtain and deal with ENV variables which might need to affect how you perform your builds
+- [logging](./gatsby/logging.js) some helper logging to let you confirm various ENV variables on build when working across different platform, and a list of which gatsby plugins are currently running
+
 ## 📃 Gatsby Nodes
-- [webWorkers](./gatsby/node/webWorkers.js), using `workerizer` will automatically turn `*.worker.js` files into callable functions from the site lib/components affecting gatsby's `onCreateWebpackConfig` to tie in the loader on build.
+- [webWorkers](gatsby/node/onCreateWebpackConfig/webWorkers.js), using `workerizer` will automatically turn `*.worker.js` files into callable functions from the site lib/components affecting gatsby's `onCreateWebpackConfig` to tie in the loader on build.
 
 ## 🖥️ Gatsby Browser
 - [wrapRootElement](./gatsby/browser/wrapRootElement.js) will set the `useAppContext` across the root page element in gatsby, so that any component will have access to the global state as needed.
 
-<hr/>
-
-# ⚰️ Failures and Resolutions
-## [gatsby-plugin-root-import](https://github.com/mongkuen/gatsby-plugin-root-import)
-> Set Webpack to resolve root, allowing you to import modules from an absolute project path rather than relative ../../ paths.
-
-**Ideal**: Because `import x from '../../../y` paths are a bulls8it standard to live by :P
-
-**The Issue:**<br/>The concept of moving away from awkwardly linked files is desirable, as it can be hard to move files around later in refactors. However, IDE support has no concept of where you're referencing these methods and components from sadly. As such, this breaks the ability to jump to definitions which is a detriment to workflow. So as practical as it is to want a clean manageable way to associate files, it just didn't pan out in actual usage. 
-
-**Resolution:**<br/>While there is a bit of manual effort, a clean viable alternate was found. With components grouped into logicial concerns, i.e `layout`, `media`, `meta`, and the desire to namespace these effectively, it gets verbose targeting `../layout/Layout/Layout` named components.
+# Standards
+## Component Pathing/Grouping
+With components grouped into logical concerns, i.e `layout`, `media`, `meta`, and the desire to namespace these effectively, it gets verbose targeting `../layout/Layout/Layout` named components.
 
 While module imports don't allow the right flexibility, because Gatsby is based in webpack, we're not limited and can set up a given file to use node style importing with `require` statements.
 

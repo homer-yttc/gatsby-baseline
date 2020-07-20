@@ -1,0 +1,26 @@
+const PARAGRAPH_TYPES = {
+  p_hero_image_after: 'p_hero_image_after',
+  p_case_study_cta: 'p_case_study_cta',
+  p_cta: 'p_cta',
+  p_footer_cta: 'p_footer_cta',
+  p_slider_item: 'p_slider_item',
+  p_icon_feature: 'p_icon_feature',
+  p_container: 'p_container',
+  p_image_grid: 'p_image_grid',
+  p_hero_featured_article_detailed: 'p_hero_featured_article_detailed',
+  p_slider: 'p_slider',
+  p_icon_cloud: 'p_icon_cloud',
+  p_quadrant_section: 'p_quadrant_section',
+  p_quadrant: 'p_quadrant',
+  p_grid: 'p_grid',
+  p_heading: 'p_heading',
+  p_info_block: 'p_info_block',
+  p_info_block_container: 'p_info_block_container',
+  p_text: 'p_text',
+  p_title: 'p_title',
+  p_button: 'p_button',
+  p_cta_slider: 'p_cta_slider',
+  p_rating_card: 'p_rating_card',
+}
+
+export default PARAGRAPH_TYPES

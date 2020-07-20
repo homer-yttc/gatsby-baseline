@@ -4,6 +4,7 @@ const { srcPaths } = require('../../site-settings')
 module.exports = [
   'gatsby-plugin-eslint',
   'gatsby-plugin-catch-links',
+  // 'gatsby-plugin-postcss',
   {
     resolve: 'gatsby-plugin-sass',
     options: {

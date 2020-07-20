@@ -1,4 +1,5 @@
 const { NETLIFY_ENV } = require('../env')
+const { monitoring: { gtmId } } = require('../../site-settings')
 
 const hosting = [
   // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -9,17 +10,38 @@ const hosting = [
     options: {
       fonts: [
         {
-          family: 'Oswald',
-          subsets: ['latin'],
-        },
-        {
           family: 'Open Sans',
-          variants: ['400', '700'],
+          variants: ['300', '300i', '400', '400i', '600'],
+          subsets: ['latin'],
         },
       ],
     },
   },
 ]
+
+// Include GTM if available.
+if (gtmId) {
+  hosting.push({
+    resolve: 'gatsby-plugin-google-tagmanager',
+    options: {
+      id: gtmId,
+
+      // Include GTM in development.
+      // Defaults to false meaning GTM will only be loaded in production.
+      includeInDevelopment: false,
+
+      // datalayer to be set before GTM is loaded
+      // should be an object or a function that is executed in the browser
+      // Defaults to null
+      defaultDataLayer: { platform: 'gatsby' },
+
+      // Specify optional GTM environment details.
+      // gtmAuth: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING',
+      // gtmPreview: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME',
+      // dataLayerName: 'YOUR_DATA_LAYER_NAME',
+    },
+  })
+}
 
 if (NETLIFY_ENV) {
   hosting.push({
@@ -27,9 +49,12 @@ if (NETLIFY_ENV) {
     options: {
       // option to add more headers. 'Link' headers are transformed by the below criteria
       headers: {
-        // "/*": [
-        //   "Basic-Auth: someuser:somepassword anotheruser:anotherpassword",
-        // ],
+        '/': [
+          'Basic-Auth: therefore:access',
+        ],
+        '/*': [
+          'Basic-Auth: therefore:access',
+        ],
       },
       // option to add headers for all pages. 'Link' headers are transformed by the below criteria
       allPageHeaders: [],
